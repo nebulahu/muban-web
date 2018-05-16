@@ -1,0 +1,31 @@
+<include file="Public/header"/>
+<!-- 新闻资讯 -->
+<div class="tps_newsdetail">
+	<div class="tps_title clr">
+		<div class="name">新闻资讯</div>
+	</div>
+	<div class="main">
+		<h1 class="h1">高质量的产品信息有哪些优势？</h1>
+		<div class="pream">
+			<time datetime="{$info.create_time|date='Y-m-d',###}" pubdate="">更新时间：{$info.create_time|date='Y-m-d',###}</time>
+			<span>70次浏览</span>
+		</div>
+		<div class="guided">{$info.description}</div>
+		<div class="editor">{$info.content}</div>
+		<div class="pages clr">
+			<article:next name="next" info="info">
+				<a href="{:U('?id='.$next['id'])}" class="prev a_hidden">上一篇：{$info['title']}</a>
+			</article:next>
+			<article:prev name="prev" info="info">
+				<a href="{:U('?id='.$prev['id'])}" class="next a_hidden">下一篇：{$info['title']}</a>
+			</article:prev>			
+		</div>
+	</div>
+</div>
+<div class="tps_position clr" id="pageId" data-id="3">
+	<img src="__MONKEYSTYLE__images/bread_nav_ico.png">
+	<a href="{:U('index/index')}">首页</a>
+	<i class="iconright"></i>
+	<span>新闻资讯</span>
+</div>
+<include file="Public/footer"/>

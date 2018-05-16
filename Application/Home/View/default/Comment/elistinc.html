@@ -1,0 +1,20 @@
+<div class="commodity_review_list" id="towList">
+    <div class="main">
+        <div class="tit">买家评论</div>
+        <ul class="list" id="evaluationBuilding">
+            <volist name="list" id="vo">
+            <li>
+                <div class="top clr">
+                    <a href="javascript:void(0);" class="link_pic">
+                        <img src="" alt="" class="pic">
+                    </a>
+                    <div class="name">{$vo.mid|getMemberInfo=###,nickname}</div>
+                </div>
+                <div class="cen">{$vo.content}</div>
+                <div class="time">{$vo.create_time|date='Y-m-d',###}</div>
+            </li>
+            </volist>
+        </ul>
+        <a href="{:U('Comment/elist','gid='.$info['id'])}" class="link_more_list">查看所有评论</a>
+    </div>
+</div>

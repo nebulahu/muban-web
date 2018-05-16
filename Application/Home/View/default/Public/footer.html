@@ -1,0 +1,43 @@
+<!-- 内页通用底部 -->
+   </div>
+	 <div class="footer-wp">
+          <div class="footer center">
+            <div class="btlogo fl">
+              <a href="{:U('Index/index')}"><img src="__IMG__/logobt.png"></a>
+               <think:article id="138">
+                {$article['description']}
+                </think:article>
+            </div>
+            <div class="footer-link fl">
+                <div class="quicklink">快速链接</div>
+                <ul>
+                  <li><a href="{:U('Article/lists?category=87')}">关于我们</a>
+                <a class="fr" href="{:U('Article/lists?category=91')}">产品中心</a></li>
+                  <li><a href="{:U('Article/lists?category=89')}">新闻中心</a>
+                <a class="fr" href="{:U('Article/lists?category=90')}#module-setmodu">在线留言</a></li>
+                  <li>
+                <a href="{:U('Article/lists?category=90')}">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="recent fl">
+                <div class="recent-new">最近新闻</div>
+                <ul>
+                 <article:list name="vo" category="89" row="4">
+                  <li><a class="a_hidden" href="javascript:void(0);" target="_blank">{$vo["title"]}</a><span class="fr">{$vo[create_time]|date='Y-m-d',###}</span></li>
+                  </article:list>
+                </ul>
+            </div>
+            <div class="weixin fl">
+              <div class="about">关于我们</div>
+              <?php $imgcode = C('COMPANY_IMGCODE');?>
+              <img src="{$imgcode|get_cover='path'}" alt="" />
+            </div>
+          </div>
+          <div class="copyright">{:C('WEB_SITE_ICP')}</div>
+      </div>
+      <script type="text/javascript" src="__WEBMONKEY__/js/jquery/focus/jquery.slides.js"></script>
+       <script type="text/javascript" src="__WEBMONKEY__/js/layer/layer/layer.js"></script>
+      <script type="text/javascript" src="__JS__/src/main.js"></script>
+      
+     
+      

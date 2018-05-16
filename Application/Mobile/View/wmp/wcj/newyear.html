@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,user-scalable=no" name="viewport">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>{:C('COMPANY_NAME')}-微名片</title>
+<script type="text/javascript" src="__WEBMONKEY__js/windowSize.js"></script>
+<link type="text/css" href="__WEBMONKEY__/js/jquery/swiper/3.2.7/swiper.min.css" rel="stylesheet">
+<link type="text/css" href="__WEBMONKEY__/js/jquery/swiper/3.2.7/animate.min.css" rel="stylesheet">
+<link type="text/css" href="__WEBSITETLP__wmp/{$config.wmp_style}/css/dist/website.mobile.min.css" rel="stylesheet">
+
+</head>
+<body>
+<script type="text/javascript" src="__WEBMONKEY__js/jquery/jquery/1.8.3/jquery.js"></script>
+
+<div class="loading is_flexbox" id="loading">
+	<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/homepic1.png" class="pic"/>
+</div>
+<div class="swiper-container pageslide" id="pageSlide">
+    <div class="swiper-wrapper">
+       <div class="swiper-slide homepage">
+	   		<a href="{:U('index/index')}" class="ani logo" swiper-animate-effect="flipInY" swiper-animate-duration="0.6s" swiper-animate-delay="0.9s">
+				<?php $logo=C('COMPANY_LOGO'); if(!empty($logo)){ ?>
+				<img src="{$logo|get_cover='url'}" class="ani pic" swiper-animate-effect="tada" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s"/>
+				<?php } ?>
+			</a>
+			
+           	<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/fu.png" class="ani fu" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.8s" swiper-animate-delay="2s"/>
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/meihua.png" class="ani flower" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s"/>
+			<div class="ani title" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.6s" swiper-animate-delay="2.4s">
+				<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/home-title.png" class="ani pic" swiper-animate-effect="swing" swiper-animate-duration="0.8s" swiper-animate-delay="2.6s"/>
+			</div>
+			
+			<div class="chicken">
+				<div class="ani" swiper-animate-effect="rollIn" swiper-animate-duration="1s" swiper-animate-delay="3s">
+					<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/homepic1.png" class="ani pic1" swiper-animate-effect="rubberBand" swiper-animate-duration="1.4s" swiper-animate-delay="3.4s"/>
+				</div>
+				<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/icon-cloud.png" class="ani cloud" swiper-animate-effect="fadeInLeftBig" swiper-animate-duration="1s" swiper-animate-delay="3s"/>
+				<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/icon-dan1.png" class="ani dan1" swiper-animate-effect="fadeInDown" swiper-animate-duration="1.6s" swiper-animate-delay="3.6s"/>
+				<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/icon-dan2.png" class="ani dan2" swiper-animate-effect="fadeInDown" swiper-animate-duration="1.2s" swiper-animate-delay="3.8s"/>
+			</div>
+			<div class="ani date" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.8s" swiper-animate-delay="4.7s">
+				<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/homepic2.png" class="ani pic2" swiper-animate-effect="tada" swiper-animate-duration="0.8s" swiper-animate-delay="4.7s"/>
+			</div>
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/web-swipe-tip.png" class="icon-next-bottom"/>
+		</div>
+        <div class="swiper-slide page2">
+			<a href="{:U('index/index')}" class="ani logo" swiper-animate-effect="flipInY" swiper-animate-duration="1.4s" swiper-animate-delay="0.6s">
+				<?php $logo=C('COMPANY_LOGO'); if(!empty($logo)){ ?>
+				<img src="{$logo|get_cover='url'}" class="ani pic" swiper-animate-effect="tada" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s"/>
+				<?php } ?>
+			</a>
+			
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/lamp1.png" class="ani lamp1" swiper-animate-effect="fadeInUpBig" swiper-animate-duration="4.4s" swiper-animate-delay="0.8s"/>
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/lamp2.png" class="ani lamp2" swiper-animate-effect="fadeInUpBig" swiper-animate-duration="5s" swiper-animate-delay="1.2s"/>
+			
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/fu1.png" class="ani fu1" swiper-animate-effect="bounceInDown" swiper-animate-duration="6s" swiper-animate-delay="0.8s"/>
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/fu2.png" class="ani fu2" swiper-animate-effect="bounceInDown" swiper-animate-duration="4.4s" swiper-animate-delay="1s"/>
+			<div class="ani title" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="4s">
+				<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/page2-title.png" class="ani pic" swiper-animate-effect="rotateIn" swiper-animate-duration="1s" swiper-animate-delay="4.4s"/>
+			</div>
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/page2-cloud.png" class="ani cloud" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="3.2s"/>
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/page2-date.png" class="ani date" swiper-animate-effect="zoomInDown" swiper-animate-duration="2s" swiper-animate-delay="1.2s"/>
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/web-swipe-tip.png" class="icon-next-bottom"/>
+		</div>
+		<div class="swiper-slide page3">
+			<a href="{:U('index/index')}" class="ani logo" swiper-animate-effect="flipInY" swiper-animate-duration="1.4s" swiper-animate-delay="0.6s">
+				<?php $logo=C('COMPANY_LOGO'); if(!empty($logo)){ ?>
+				<img src="{$logo|get_cover='url'}" class="ani pic" swiper-animate-effect="tada" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s"/>
+				<?php } ?>
+			</a>
+			
+			<!--灯笼-->
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/lamp1-right.png" class="ani lamp1" swiper-animate-effect="fadeInUpBig" swiper-animate-duration="3.4s" swiper-animate-delay="0.8s"/>
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/lamp2-right.png" class="ani lamp2" swiper-animate-effect="fadeInUpBig" swiper-animate-duration="4s" swiper-animate-delay="1.2s"/>
+			<!--梅花-->
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/page3-meihua.png" class="ani meihua" swiper-animate-effect="rotateInDownLeft" swiper-animate-duration="2s" swiper-animate-delay="1.2s"/>
+			<!--元旦-->
+			<div class="yd">
+				<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/page3-ydbg.png" class="ani bg" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="3s"/>
+				<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/page3-ydtxt.png" class="ani txt" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="3.6s"/>
+			</div>
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/happy.png" class="ani happy" swiper-animate-effect="fadeIn" swiper-animate-duration="1.6s" swiper-animate-delay="4s"/>
+			<!--鸡-->
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/page3-ji.png" class="ani ji" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="2s" swiper-animate-delay="5s"/>
+			<!--文字介绍-->
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/txt.png" class="ani text" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="6.4s"/>
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/web-swipe-tip.png" class="icon-next-bottom"/>
+		</div>
+		<div class="swiper-slide page4">
+			<a href="{:U('index/index')}" class="ani logo" swiper-animate-effect="flipInY" swiper-animate-duration="1.4s" swiper-animate-delay="0.6s">
+				<?php $logo=C('COMPANY_LOGO'); if(!empty($logo)){ ?>
+				<img src="{$logo|get_cover='url'}" class="ani pic" swiper-animate-effect="tada" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s"/>
+				<?php } ?>
+			</a>
+			
+			<!--灯笼-->
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/lamp1-right.png" class="ani lamp1" swiper-animate-effect="fadeInUpBig" swiper-animate-duration="3.4s" swiper-animate-delay="0.8s"/>
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/lamp2-right.png" class="ani lamp2" swiper-animate-effect="fadeInUpBig" swiper-animate-duration="4s" swiper-animate-delay="1.2s"/>
+			<!--对联-->
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/dl1.png" class="ani dl1" swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="1.2s"/>
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/dl2.png" class="ani dl2" swiper-animate-effect="bounceInDown" swiper-animate-duration="1.2s" swiper-animate-delay="2s"/>
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/dl3.png" class="ani dl3" swiper-animate-effect="bounceInDown" swiper-animate-duration="1.2s" swiper-animate-delay="2s"/>
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/dl4.png" class="ani dl4" swiper-animate-effect="rotateIn" swiper-animate-duration="2s" swiper-animate-delay="3s"/>
+			<!--文字-->
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/page4-txt.png" class="ani txt" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="4s"/>
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/web-swipe-tip.png" class="icon-next-bottom"/>
+		</div>
+		<div class="swiper-slide page5">
+			<a href="{:U('index/index')}" class="ani logo" swiper-animate-effect="flipInY" swiper-animate-duration="1.4s" swiper-animate-delay="0.6s">
+				<?php $logo=C('COMPANY_LOGO'); if(!empty($logo)){ ?>
+				<img src="{$logo|get_cover='url'}" class="ani pic" swiper-animate-effect="tada" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s"/>
+				<?php } ?>
+			</a>
+			
+			<!--灯笼-->
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/lamp1-right.png" class="ani lamp1" swiper-animate-effect="fadeInUpBig" swiper-animate-duration="3.4s" swiper-animate-delay="0.8s"/>
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/lamp2-right.png" class="ani lamp2" swiper-animate-effect="fadeInUpBig" swiper-animate-duration="4s" swiper-animate-delay="1.2s"/>
+			<!--鸡-->
+			<div class="ani ji" swiper-animate-effect="rubberBand" swiper-animate-duration="2s" swiper-animate-delay="4.6s">
+				<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/page4-pic1.png" class="ani pic" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s" swiper-animate-delay="1.2s" />
+			</div>
+			<!--刻章-->
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/page4-pic2.png" class="ani chapter" swiper-animate-effect="fadeIn" swiper-animate-duration="3s" swiper-animate-delay="2s"/>
+			<!--文字-->
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/page4-pic3.png" class="ani txt1" swiper-animate-effect="bounceInLeft" swiper-animate-duration="2.4s" swiper-animate-delay="2.8s"/>
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/page4-pic4.png" class="ani txt2" swiper-animate-effect="bounceInRight" swiper-animate-duration="2.4s" swiper-animate-delay="2.8s"/>
+			<!--2017-->
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/page4-pic5.png" class="ani year" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay="1.2s"/>
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/web-swipe-tip.png" class="icon-next-bottom"/>
+		</div>
+		<div class="swiper-slide page6">
+			<a href="{:U('index/index')}" class="ani logo" swiper-animate-effect="flipInY" swiper-animate-duration="1.4s" swiper-animate-delay="0.6s">
+				<?php $logo=C('COMPANY_LOGO'); if(!empty($logo)){ ?>
+				<img src="{$logo|get_cover='url'}" class="ani pic" swiper-animate-effect="tada" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s"/>
+				<?php } ?>
+			</a>
+			
+			<div class="" id="leafContainer" swiper-animate-effect="fadeIn" swiper-animate-duration="2s" swiper-animate-delay="3s"></div>
+			<!--梅花-->
+			<div class="meihua" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="1s" swiper-animate-delay="0.4s">
+				<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/page6-meihua.png" class="ani pic" swiper-animate-effect="bounce" swiper-animate-duration="2s" swiper-animate-delay="1.2s"/>
+			</div>
+			<!--文字-->
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/page6-txt1.png" class="ani txt1" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="3.2s"/>
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/page6-txt2.png" class="ani txt2" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="3.8s"/>
+			
+			<img src="__WEBSITETLP__wmp/{$config.wmp_style}/images/weixin_code.jpg" class="ani piccode" swiper-animate-effect="zoomIn" swiper-animate-duration="1.4s" swiper-animate-delay="4.4s"/>
+			<!--<?php $erwei_code=C('COMPANY_IMGCODE'); if(!empty($erwei_code)){ ?>
+			<img src="{$erwei_code|get_cover='url'}" class="ani piccode" swiper-animate-effect="zoomIn" swiper-animate-duration="1.4s" swiper-animate-delay="4.4s"/>
+			<?php } ?>-->
+			<div class="ani name" swiper-animate-effect="fadeInDown" swiper-animate-duration="1.4s" swiper-animate-delay="5s">{:C('COMPANY_NAME')}</div>
+			<a href="http://m.d17.cc/" class="copy">Copyright © 第一枪 版权所有</a>
+		</div>
+    </div>
+      
+</div>
+
+<!--音乐
+<div class="music on" data-switch="on" id="music">
+    <audio loop src="__MONKEYSTYLE__images/wmp/music.mp3" id="media" preload="preload"></audio>
+</div>-->
+<script type="text/javascript" src="__WEBMONKEY__/js/jquery/swiper/3.2.7/swiper.jquery.min.js"></script>
+<script type="text/javascript" src="__WEBMONKEY__/js/jquery/swiper/3.2.7/swiper.animate.min.js"></script>
+<script type="text/javascript" src="__WEBMONKEY__/js/jquery/toucher/toucher.js"></script>
+<script type="text/javascript" src="__WEBSITETLP__wmp/{$config.wmp_style}/js/dist/website.mobile.min.js"></script>
+<script>
+$(document).ready(function(e) {
+	var imgurl= '__WEBSITETLP__wmp/{$config.wmp_style}/images/leaf';
+	wmp.homebanner(imgurl);
+	//wmp.contactTel();
+	//wmp.music();
+	
+});        
+</script>
+</body>
+</html>

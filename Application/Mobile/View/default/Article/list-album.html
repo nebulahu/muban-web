@@ -1,0 +1,28 @@
+<include file="Public/header"/>
+<!-- 企业相册 -->
+<div class="tps_album">
+	<div class="tps_title clr">
+		<div class="name">企业相册</div>
+	</div>
+	<div class="pagein_album">
+		<ul class="clr">
+			<article:list name="vo" category="$cid" row="$category['list_row']">
+			<li>
+				<a href="{:U('Article/detail?id='.$vo['id'])}" title="{$vo.title}" class="link">
+					<img src="{$vo.cover_id|get_cover='url'}" class="pic">
+					<span class="name">{$vo.title}</span>
+				</a>
+			</li>
+			</article:list>
+		</ul>
+			
+	</div>
+</div>
+<div class="tps_position clr" id="pageId" data-id="4">
+	<img src="__MONKEYSTYLE__images/bread_nav_ico.png">
+	<a href="{:U('index/index')}">首页</a>
+	<i class="iconright"></i>
+	<span>企业相册</span>
+</div>
+
+<include file="Public/footer"/>

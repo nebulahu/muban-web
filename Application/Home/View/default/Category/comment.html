@@ -1,0 +1,212 @@
+<div class="module-setmodu" id="module-setmodu">
+	<div class="pagein-message">
+		<div class="message-tit">预约留言</div>
+		<form id="objForm" action="{$action}">
+			<div class="message-main clr">
+				<div class="message-main-left">
+					<div class="tr">
+						<div class="tr-tip">姓名</div>
+						<input type="text" class="textinput" name="username" id="username" placeholder="请输入姓名" />
+					</div>
+					<div class="tr">
+						<div class="tr-tip">手机</div>
+						<input type="text" class="textinput" name="phone" id="phone" placeholder="请输入手机号码" />
+					</div>
+					<div class="tr">
+						<div class="tr-tip">地址</div>
+						<input type="text" class="textinput" name="address" id="address" placeholder="请输入地址" />
+					</div>
+				</div>
+				<div class="message-main-right">
+					<div class="tr">
+						<div class="tr-tip">内容</div>
+						<textarea class="textarea" name="content" id="remarks" placeholder="请正确输入留言内容，不超过200字！"></textarea>
+					</div>
+				</div>
+			</div>
+			<input type="button" class="submitbtn" id="submitBtn" value="提交留言">
+		</form>
+	</div>
+	<!--设置遮罩-->
+	<div class="module-setmodu-mask" id="messageCodeBtn"></div>
+</div>
+<style type="text/css">
+	#Validform_msg{color:#7d8289; font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif; width:280px; -webkit-box-shadow:0px 0px 3px #aaa; -moz-box-shadow:0px 0px 3px #aaa; background:#fff; position:absolute; top:0px; right:50px; z-index:99999; display:none;filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#999999');
+-moz-box-shadow: 0 0 20px #000;
+  -webkit-box-shadow: 0 0 20px #000;
+  box-shadow: 0 0 20px #000;}
+	#Validform_msg .iframe{position:absolute; left:0px; top:-1px; z-index:-1;}
+	#Validform_msg .Validform_title{line-height:40px; height:40px; text-align:left; font-weight:bold; padding:0 20px; color:#333; position:relative; background-color:#ddd;}
+	#Validform_msg a.Validform_close:link,#Validform_msg a.Validform_close:visited{line-height:40px; position:absolute; right:20px; top:0px; color:#333; text-decoration:none;font-size: 12px;}
+	#Validform_msg a.Validform_close:hover{color:#666;}
+	#Validform_msg .Validform_info{padding:20px;border-top:none; text-align:left;}
+</style>
+
+
+
+<!-- 图解弹框 -->
+<div id="messagetHtml" style="display:none;">
+	<div class="module-code-introduce">
+		<h3 class="title">PHP标签</h3>
+		<div class="code">
+			<p class="c_red"><span class="c_gray">留言：</span><literal>{:W('<span class="bg_black">Category/comment</span>')}</literal></p>
+		</div>
+		<h3 class="title">HTML标签</h3>
+		<div class="code">
+<pre>
+&lt;div class="pagein-message"&gt;
+	&lt;div class="message-tit"&gt;预约留言&lt;/div&gt;
+	&lt;form id="objForm" action="<literal><span class="c_blue">{$action}</span></literal>"&gt;
+		&lt;div class="message-main clr"&gt;
+			&lt;div class="message-main-left"&gt;
+				&lt;div class="tr"&gt;
+					&lt;div class="tr-tip"&gt;姓名&lt;/div&gt;
+					&lt;input type="text" class="textinput" name="username" id="username" placeholder="请输入姓名" /&gt;
+				&lt;/div&gt;
+				&lt;div class="tr"&gt;
+					&lt;div class="tr-tip"&gt;手机&lt;/div&gt;
+					&lt;input type="text" class="textinput" name="phone" id="phone" placeholder="请输入手机号码" /&gt;
+				&lt;/div&gt;
+				&lt;div class="tr"&gt;
+					&lt;div class="tr-tip"&gt;地址&lt;/div&gt;
+					&lt;input type="text" class="textinput" name="address" id="address" placeholder="请输入地址" /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="message-main-right"&gt;
+				&lt;div class="tr"&gt;
+					&lt;div class="tr-tip"&gt;内容&lt;/div&gt;
+					&lt;textarea class="textarea" name="content" id="remarks" placeholder="请正确输入留言内容，不超过200字！"&gt;&lt;/textarea&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;input type="button" class="submitbtn" id="submitBtn" value="提交留言"&gt;
+	&lt;/form&gt;
+&lt;/div&gt;
+
+&lt;style type="text/css"&gt;
+	#Validform_msg{color:#7d8289; font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif; width:280px;
+	-webkit-box-shadow:0px 0px 3px #aaa; -moz-box-shadow:0px 0px 3px #aaa;
+	 background:#fff; position:absolute; top:0px; right:50px; z-index:99999; display:none;
+	 filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#999999');
+-moz-box-shadow: 0 0 20px #000;
+  -webkit-box-shadow: 0 0 20px #000;
+  box-shadow: 0 0 20px #000;}
+	#Validform_msg .iframe{position:absolute; left:0px; top:-1px; z-index:-1;}
+	#Validform_msg .Validform_title{line-height:40px; height:40px; text-align:left; font-weight:bold; padding:0 20px; color:#333; position:relative; background-color:#ddd;}
+	#Validform_msg a.Validform_close:link,#Validform_msg a.Validform_close:visited{line-height:40px;
+	position:absolute; right:20px; top:0px; color:#333; text-decoration:none;font-size: 12px;}
+	#Validform_msg a.Validform_close:hover{color:#666;}
+	#Validform_msg .Validform_info{padding:20px;border-top:none; text-align:left;}
+&lt;/style&gt;</pre>
+		</div>
+		<h3 class="title">LESS</h3>
+		<div class="code">
+			<pre>
+/*
+	@name: 内页留言
+*/
+.pagein-message{
+	height:515px;overflow: hidden;background: url("<span class="c_blue">@{img-url}</span>message-bg.jpg") no-repeat center top;
+	<span class="c_orange pd5">/* @{img-url}指向路径<span class="c_gray">@img-url: "../../images/"</span> */</span>
+	&-tit{font-size: 26px;margin: 51px 0 42px 0;text-align: center;color: #fff;line-height: 30px;}
+	&-main{
+		width: 1200px;margin:0 auto;
+		&-left{float: left;}
+		&-right{float: right;}
+	}
+	.tr{
+		width: 588px;    
+		&-tip{font-size: 18px;color: #fff;line-height: 50px;padding-left: 70px;position: relative;
+			&:after{content:'';width:4px;height:4px;display:block;position: absolute;top: 50%;left: 50px;background: #f00;margin:-2px 0 0 -2px;.border-radius(5px);}
+		}
+		.textinput{width: 570px;height: 34px;line-height: 34px;display: block;border:0;padding-left: 18px;.border-radius(5px);}
+		.textarea{width: 568px;display: block;border: 0;padding:0 10px;height: 202px;font-family: "Microsoft YaHei";line-height: 30px;}
+	}
+	.submitbtn{width: 180px;height:38px;font-size: 18px;color: #fff;margin: 48px auto 30px auto;border:0;display: block;background: #ff4343;.border-radius(5px);}
+}
+			</pre>
+		</div>
+		<h3 class="title">JS</h3>
+		<div class="code">
+			<pre>
+var <span class="c_blue">default</span> = {
+	/*
+	* 表单提交
+	*/
+	formSub : function(){
+		var formvalid = $('<span class="c_blue">#objForm</span>').Validform({
+			btnSubmit:"<span class="c_blue">#submitBtn</span>",
+			beforeSubmit : function(curform) {
+				<span class="c_blue">default</span>.submitForm();
+				
+				return false;
+			 }
+		});
+		formvalid.addRule([
+			{
+				ele:"#username",
+				datatype:/^[\u4E00-\u9FA5\uf900-\ufa2d]{2,6}$/,
+				nullmsg:"请输入中文姓名！",
+				errormsg:"请正确输入中文姓名!"
+			},
+			{
+				ele:"#phone",
+				datatype:/^(0|86|17951)?(13[0-9]|15[012356789]|17[01678]|18[0-9]|14[57])[0-9]{8}$/,
+				nullmsg:"请输入电话号码！",
+				errormsg:"请正确填写手机号格式、如：13511111111"
+			},
+			{
+				ele:"#address",
+				datatype:"*1-50",
+				nullmsg:"请输入地址！",
+				nullmsg:"请正确输入地址，不超过50字！"
+			},
+			{
+				ele:"#remarks",
+				datatype:"*1-200",
+				nullmsg:"请输入留言内容！",
+				nullmsg:"请正确输入留言内容，不超过200字！"
+			}
+		]);
+	},
+	submitForm : function(){
+		$.ajax({
+			type : 'POST',
+			url : <span class="c_blue">$('#objForm').attr('action')</span>,
+			data : <span class="c_blue">$('#objForm').serialize()</span>,
+			dataType : 'json',
+			success : function(data){
+				if(data.status){
+					layer.alert(data.message, {
+						icon: 6,
+						yes: function(index){
+							location.reload();
+						}
+					});
+				}else{
+					layer.alert(data.message, {icon: 5});
+				}
+			}
+		});
+	}
+}
+			</pre>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+
+	//页面层-自定义
+	$('#messageCodeBtn').click(function(){
+		layer.open({
+		  type: 1,
+		  title: '留言调用',
+		  area: '1200px',
+		  shadeClose: true,
+		  content: $('#messagetHtml').html()
+		});
+	});
+	
+});
+</script>

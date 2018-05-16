@@ -1,0 +1,54 @@
+<!-- 轮播图 star -->
+<if condition="$type eq 1">
+	<div class="focus-slider {$classname}" id="{$styleid}">
+		<div class="dot">
+			<ul></ul>
+		</div>
+		<div class="main">
+			<ul>
+				<volist name="list" id="lo" key="k">
+					<li>
+						<a href="{$lo.url}" title="{$lo.title}" style="background:url({$lo.path}) center;"></a>
+					</li>
+				</volist>
+			</ul>
+		</div>
+	
+		<!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+		<a class="prev" href="javascript:void(0)"></a>
+		<a class="next" href="javascript:void(0)"></a>
+	
+	</div>
+<elseif condition="$type eq 2"/>
+	<div class="focus-slider {$classname}" id="{$styleid}">
+		<div class="dot">
+			<ul></ul>
+		</div>
+		<div class="main">
+			<ul>
+				<volist name="list" id="lo" key="k">
+					<li>
+						<a href="{$lo.url}" title="{$lo.title}" style="background:url({$lo.path}) center;"></a>
+					</li>
+				</volist>
+			</ul>
+		</div>
+		<!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+		<a class="prev" href="javascript:void(0)"></a>
+		<a class="next" href="javascript:void(0)"></a>
+	</div>
+<elseif condition="$type eq 3"/>
+	<!--移动端焦点图-->
+	<div class="swiper-container {$classname}" id="{$styleid}">
+		<ul class="swiper-wrapper">
+			<volist name="list" id="lo" key="k">
+				<li class="swiper-slide">
+					<a href="{$lo.url}" class="link" title="{$lo.title}"><img src="{$lo.path}" class="pic" /></a>
+				</li>
+			</volist>
+		</ul>
+		<!-- 如果需要分页器 -->
+		<div class="swiper-pagination {$classname}-pagination"></div>
+	</div>
+</if>
+<!-- 轮播图 end -->

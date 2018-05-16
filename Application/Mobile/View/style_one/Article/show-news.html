@@ -1,0 +1,42 @@
+<include file="Public/header"/>
+<!-- 新闻资讯 -->
+<div class="tps-news">
+	<div class="tps-title tps-title-detail">
+		<div class="name">新闻资讯</div>
+	</div>
+	<div class="tps-news-detail">
+		<h1 class="h1">{$info.title}</h1>
+		<div class="pream">
+			<time datetime="{$info.create_time|date='Y-m-d',###}" pubdate="">更新时间：{$info.create_time|date='Y-m-d',###}</time>
+			<span>70次浏览</span>
+		</div>
+		<div class="guided">{$info.description}</div>
+		<div class="tps-editor">{$info.content}</div>
+		<div class="pages clr">
+			<article:next name="next" info="info">
+				<a href="{:U('?id='.$next['id'])}" class="prev a_hidden">上一篇：{$info['title']}</a>
+			</article:next>
+			<article:prev name="prev" info="info">
+				<a href="{:U('?id='.$prev['id'])}" class="next a_hidden">下一篇：{$info['title']}</a>
+			</article:prev>			
+		</div>
+	</div>
+</div>
+<div class="tps-position clr">
+	<a href="{:U('index/index')}" class="link">首页</a>
+	<i class="iconright">&nbsp;&raquo;&nbsp;</i>
+	<a href="{:U('index/index')}" class="link">新闻资讯</a>
+	<i class="iconright">&nbsp;&raquo;&nbsp;</i>
+	<span class="last a_hidden">{$info.title}</span>
+</div>
+
+<include file="Public/footer"/>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	pageinit.newsdetail();
+});
+	
+</script>
+
+</body>
+</html>

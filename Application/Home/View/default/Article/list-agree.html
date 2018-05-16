@@ -1,0 +1,69 @@
+<include file="Public/header"/>
+
+	<div class="join_page">
+		<div class="text_tit">Advantage</div>
+		<div class="text_words">加盟优势</div>
+		<ul class="main clr" id="tabTiele">
+			<li class="lis1 active">
+				<i class="icon icon1"></i>
+				<div class="text">产品优势</div>
+			</li>
+			<li class="lis2">
+				<i class="icon icon2"></i>
+				<div class="text">服务优势</div>
+			</li>
+			<li class="lis3">
+				<i class="icon icon3"></i>
+				<div class="text">品牌优势</div>
+			</li>
+			<li class="lis4">
+				<i class="icon icon4"></i>
+				<div class="text">营销优势</div>
+			</li>
+			<li class="lis5">
+				<i class="icon icon5"></i>
+				<div class="text">行业优势</div>
+			</li>
+		</ul>
+		<div class="cen_box" id="tabMain">
+        	<think:article id="124">
+			<div class="main_box" style="display:block;">
+				{$article['content']}
+			</div>
+            </think:article>
+			<think:article id="125">
+			<div class="main_box">
+				{$article['content']}
+			</div>
+            </think:article>
+			<think:article id="126">
+			<div class="main_box">
+				{$article['content']}
+			</div>
+            </think:article>
+			<think:article id="127">
+			<div class="main_box">
+				{$article['content']}
+			</div>
+            </think:article>
+			<think:article id="128">
+			<div class="main_box">
+				{$article['content']}
+			</div>
+            </think:article>
+		</div>
+	</div>
+{:W('Category/comment')}
+<include file="Public/footer"/>
+<script>
+	deqier.modulePage(6);
+
+	$("#tabTiele").find("li").hover(function(){
+		$(this).addClass("active").siblings().removeClass("active");
+		var i = $(this).index();
+		$("#tabMain").find(".main_box").eq(i).show().siblings().hide();
+	})
+	
+</script>
+</body>
+</html>

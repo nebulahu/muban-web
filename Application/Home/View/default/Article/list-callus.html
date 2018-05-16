@@ -1,0 +1,34 @@
+<include file="Public/header"/>
+
+	<div class="pagein-contactus">
+		<think:article id="169">
+			<ul class="clr">
+				
+				<li>
+					<img src="http://webmonkey.d17.cc/template/default/pc/images/icon-contact1.png" class="pic">
+					<p class="txt">电话：{:C('CONTACT_PHONE')}<br>邮箱：{:C('COMPANY_EMAIL')}</p>
+				</li>
+				<li>
+					<img src="http://webmonkey.d17.cc/template/default/pc/images/icon-contact2.png" class="pic">
+					<p class="txt">地址：{:C('COMPANY_ADDRESS')}</p>
+				</li>
+				<?php $imgcode = C('COMPANY_IMGCODE');?>	<!--二维码图片复制变量-->
+				<li>
+					<img src="http://webmonkey.d17.cc/template/default/pc/images/icon-contact3.png" class="pic">
+					<if condition="$imgcode neq ''"> 	<!--判断图片是否存在-->
+					<img src="{$imgcode|get_cover='path'}" class="codeimg" />
+					<else/>
+					<img src="__IMG__/codeimg.jpg" class="codeimg" /> 	<!--不存在时的默认图片-->
+					</if>
+				</li>
+			</ul>
+		</think:article>
+		{:hook('Map')}	<!--百度地图-->
+	</div>
+	
+<include file="Public/footer"/>
+<script>
+	deqier.modulePage(8);
+</script>
+</body>
+</html>

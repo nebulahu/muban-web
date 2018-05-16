@@ -1,0 +1,45 @@
+<include file="Public/header"/>
+<!-- 荣誉资质 -->
+<div class="tps_album tps_honor">
+	<div class="tps_title clr">
+		<div class="name">荣誉资质</div>
+	</div>
+	<div class="pagein_album" id="tpsHonorMain">
+		<think:article name="album" result="info" cate="$cid" limit="1">
+		{$info['duotu']|get_albumduotu=###,'pictrue-style','layerPic',$info['title']}
+		</think:article>
+	</div>
+</div>
+<!--图片浏览-->
+<div class="picture_browsing">
+	<i class="close">关闭</i>
+	<div class="swiper-container" id="pictureBrowsing">
+		<ul class="swiper-wrapper">
+			<li class="swiper-slide">
+				<div class="is_flexbox"><img src="http://img1.d17.cc/group1/M00/11/13/wKgAK1ae6QuIO0LUAAAAPFxFYb0AAAA9QDXDuoAAABU749.jpg" class="pic"></div>
+				<div class="name">南昌合昌工程机械有限公司1</div>
+			</li>
+			<li class="swiper-slide">
+				<div class="is_flexbox"><img src="http://img1.d17.cc/group1/M00/11/13/wKgAK1ae6QuIO0LUAAAAPFxFYb0AAAA9QDXDuoAAABU749.jpg" class="pic"></div>
+				<div class="name">南昌合昌工程机械有限公司2</div>
+			</li>
+			<li class="swiper-slide">
+				<div class="is_flexbox"><img src="http://img1.d17.cc/group1/M00/11/13/wKgAK1ae6QuIO0LUAAAAPFxFYb0AAAA9QDXDuoAAABU749.jpg" class="pic"></div>
+				<div class="name">南昌合昌工程机械有限公司3</div>
+			</li>
+			<li class="swiper-slide">
+				<div class="is_flexbox"><img src="http://img1.d17.cc/group1/M00/11/13/wKgAK1ae6QuIO0LUAAAAPFxFYb0AAAA9QDXDuoAAABU749.jpg" class="pic"></div>
+				<div class="name">南昌合昌工程机械有限公司4</div>
+			</li>
+		</ul>
+		<div class="swiper-scrollbar picture_scrollbar"></div>
+	</div>
+</div>
+<div class="tps_position clr" id="pageId" data-id="5">
+	<img src="__MONKEYSTYLE__images/bread_nav_ico.png">
+	<a href="{:U('index/index')}">首页</a>
+	<i class="iconright"></i>
+	<span>荣誉资质</span>
+</div>
+
+<include file="Public/footer"/>

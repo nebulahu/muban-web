@@ -1,0 +1,34 @@
+<include file="Public/header"/>
+<!-- 新闻资讯 -->
+<div class="tps_news">
+	<div class="tps_title clr">
+		<div class="name">新闻资讯</div>
+	</div>
+	<div class="main">
+		<ul>
+			<article:list name="vo" category="$cid" child='true'  row="$category['list_row']">
+				
+				<li class="display_flex">
+					<?php if(!empty($vo['cover_id'])){ ?>
+					<a href="{:U('Article/detail?id='.$vo['id'])}" class="pic"><img src="{$vo.cover_id|get_cover='url'}" alt="{$vo.title}" /></a>
+					<?php } ?>
+					<div class="item">
+						<a href="{:U('Article/detail?id='.$vo['id'])}"  class="name">{$vo.title}</a>
+						<?php if(!empty($vo['description'])){ ?>
+						<p class="tips">{$vo.description|msubstr=0,26}</p>
+						<span title="time" class="time">{$info.create_time|date='Y-m-d',###}</span>
+						<?php } ?>
+					</div>
+				</li>
+			</article:list>
+			
+		</ul>
+	</div>
+</div>
+<div class="tps_position clr" id="pageId" data-id="3">
+	<img src="__MONKEYSTYLE__images/bread_nav_ico.png">
+	<a href="{:U('index/index')}">首页</a>
+	<i class="iconright"></i>
+	<span>新闻资讯</span>
+</div>
+<include file="Public/footer"/>

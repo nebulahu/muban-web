@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,user-scalable=no" name="viewport">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>{:C('COMPANY_NAME')}-微名片</title>
+<script type="text/javascript" src="__WEBMONKEY__js/windowSize.js"></script>
+<link type="text/css" href="__WEBMONKEY__/js/jquery/swiper/3.2.7/swiper.min.css" rel="stylesheet">
+<link type="text/css" href="__WEBMONKEY__/js/jquery/swiper/3.2.7/animate.min.css" rel="stylesheet">
+<link type="text/css" href="__WEBSITETLP__wmp/{$config.wmp_style}/css/dist/website.mobile.min.css" rel="stylesheet">
+
+</head>
+<body>
+<script type="text/javascript" src="__WEBMONKEY__js/jquery/jquery/1.8.3/jquery.js"></script>
+
+<aside id="loading" class="loading is_flexbox">
+	<div id="fountainTextG">
+		<div id="fountainTextG_1" class="fountainTextG">
+			L</div>
+		<div id="fountainTextG_2" class="fountainTextG">
+			o</div>
+		<div id="fountainTextG_3" class="fountainTextG">
+			a</div>
+		<div id="fountainTextG_4" class="fountainTextG">
+			d</div>
+		<div id="fountainTextG_5" class="fountainTextG">
+			i</div>
+		<div id="fountainTextG_6" class="fountainTextG">
+			n</div>
+		<div id="fountainTextG_7" class="fountainTextG">
+			g</div>
+		<div id="fountainTextG_8" class="fountainTextG">
+			.</div>
+		<div id="fountainTextG_9" class="fountainTextG">
+			.</div>
+		<div id="fountainTextG_10" class="fountainTextG">
+			.</div>
+	</div>
+</aside>
+<div style="display:none;"><img src="__MONKEYSTYLE__images/wmp/share_link_img.jpg"/></div>
+<div class="swiper-container pageslide" id="pageSlide">
+    <div class="swiper-wrapper">
+       <div class="swiper-slide homepage">
+			<a href="javascript:void(0);" class="homepage_link homepage_link1 ani" id="homepageLink1" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.6s" swiper-animate-delay="0.3s">公司介绍</a>
+			<a href="javascript:void(0);" class="homepage_link homepage_link2 ani" id="homepageLink2"swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.6s" swiper-animate-delay="0.5s">公司产品</a>
+			<a href="javascript:void(0);" class="homepage_link homepage_link3 ani" id="homepageLink3"swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.6s" swiper-animate-delay="0.7s">联系方式</a>
+			<div class="homepage_sharebtn homepage_sharebtnweixin ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.8s" swiper-animate-delay="0.8s" id="sharebtnweixin"><a href="javascript:void(0);"></a></div>
+			<div class="homepage_sharebtn homepage_sharebtnfriend ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.8s" swiper-animate-delay="0.8s" id="sharebtnfriend"><a href="javascript:void(0);"></a></div>
+			<div class="homepage_title ani" swiper-animate-effect="rollIn" swiper-animate-duration="0.8s" swiper-animate-delay="1.4s"><span>{:C('COMPANY_NAME')}</span></div>
+           
+			
+			<img src="__MONKEYSTYLE__images/wmp/web-swipe-tip.png" class="pageslide_bottom_icon" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="1.7s"/>
+		</div>
+        <div class="swiper-slide infopage">
+			<h3 class="infopage_head ani" swiper-animate-effect="fadeInDownBig" swiper-animate-duration="0.8s" swiper-animate-delay="0.1s">公司介绍</h3>
+			<!--<div class="infopage_title ani" swiper-animate-effect="rotateInDownLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>-->
+			<div class="infopage_txt ani" swiper-animate-effect="zoomInDown" swiper-animate-duration="0.9s" swiper-animate-delay="0.6s">
+            <article:list name="info" category="$config['company_cid']" row="1">
+			<?php if(!empty($info['cover_id'])){ ?>
+				<img src="{$info.cover_id|get_cover='url'}" class="pic">
+			<?php } ?>
+			{$info.description}
+			</article:list>
+			<a href="{:U('Article/lists?category='.$config['company_cid'])}">【了解详细】</a>
+			</div>
+			<!--<div class="infopage_mainproduct ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1.8s" swiper-animate-delay="1.3s">主营:{$companys[product]}</div>-->
+			<!--<div class="infopage_msg">
+				<ul class="clr">
+					<li class="display_flex li1 ani" swiper-animate-effect="flipInX" swiper-animate-duration="1.8s" swiper-animate-delay="1.3s"><i class="icon"></i><span class="a_hidden"></span></li>
+					<li class="display_flex li2 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1.6s" swiper-animate-delay="1.7s"><i class="icon">模式</i><span class="a_hidden">{get_companyType($company[model],'companyModel')}</span></li>
+					<li class="display_flex li3 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1.6s" swiper-animate-delay="1.7s"><i class="icon">成立</i><span class="a_hidden">{date('Y-m-d',strtotime($company[founding_time]) )}</span></li>
+					<li class="display_flex li4 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1.6s" swiper-animate-delay="2.1s"><i class="icon">行业</i><span class="a_hidden">{get_wapindustry($companys[industry])}</span></li>
+					<li class="display_flex li5 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1.6s" swiper-animate-delay="2.1s"><i class="icon">法人</i><span class="a_hidden">{$company[legal_representative]}</span></li>
+					<li class="display_flex li6 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1.6s" swiper-animate-delay="2.5s"><i class="icon">人数</i><span class="a_hidden">{get_companyType($company[person_number],'companyPersonNumber')}</span></li>
+					<li class="display_flex li7 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1.6s" swiper-animate-delay="2.5s"><i class="icon">注资</i><span class="a_hidden">{get_companyType($company[registered_capital],'companyRegisteredCapital')}</span></li>
+				</ul>
+			</div>-->
+			
+			<img src="__MONKEYSTYLE__images/wmp/web-swipe-tip.png" class="pageslide_bottom_icon ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.2s" swiper-animate-delay="2.6s"/>
+		</div>
+		<div class="swiper-slide productpage">
+			<h3 class="productpage_title ani" swiper-animate-effect="fadeInDownBig" swiper-animate-duration="0.8s" swiper-animate-delay="0.1s">公司产品</h3>
+			<div class="productpage_list">
+				<ul class="clr" id="productpageList">
+                 
+					<article:position name="vo" pos="4" pid="$config['product_cid']" limit="6">	
+						<li class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1.2s" swiper-animate-delay="0.6s" >
+							<a href="{:U('Article/detail?id='.$vo['id'])}"><img src="{$vo.cover_id|get_cover='url'}" alt="{$vo.title}" /></a>
+							<span class="a_hidden">{$vo.title}</span>
+						</li>
+					</article:position>
+				</ul>
+			</div>
+			<img src="__MONKEYSTYLE__images/wmp/web-swipe-tip.png" class="pageslide_bottom_icon ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.2s" swiper-animate-delay="2s"/>
+		</div>
+		<div class="swiper-slide sharepage">
+			<div class="sharepage_con">
+				<h3 class="sharepage_con_title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.6s" swiper-animate-delay="0.4s">分享，赢得商机：</h3>
+				<div class="sharepage_con_btn">
+					<ul class="clr" id="shareBtn">
+						<li class="btn1 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.6s" swiper-animate-delay="0.8s"><a href="javascript:void(0);"></a><span>微信好友</span></li>
+						<li class="btn2 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.6s" swiper-animate-delay="1s"><a href="javascript:void(0);"></a><span>朋友圈</span></li>
+						<li class="btn3 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.6s" swiper-animate-delay="1.2s"><a href="javascript:void(0);"></a><span>微博</span></li>
+						<li class="btn4 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.6s" swiper-animate-delay="1.4s"><a href="javascript:void(0);"></a><span>QQ好友</span></li>
+					</ul>
+				</div>
+				<div class="sharepage_con_code ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.6s" swiper-animate-delay="1.8s">
+					<img src="__MONKEYSTYLE__images/wmp/share_code_bg.png" class="bg" />
+                    <?php $erwei_code=C('COMPANY_IMGCODE'); if(!empty($erwei_code)){ ?>
+					<img src="{$erwei_code|get_cover='url'}" class="codepic" />
+                    <?php } ?>
+				</div>
+               
+				<div class="sharepage_con_tip ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6s" swiper-animate-delay="2s">长按识别图中二维码进入企业微官网</div>
+
+			</div>
+			
+		</div>    
+    </div>
+      
+</div>
+<!--分享-->
+<div class="share_indicate" id="shareIndicate">
+	<img src="__MONKEYSTYLE__images/wmp/share_mask.png" class="mk" />
+	<img src="__MONKEYSTYLE__images/wmp/share_pop_img1.png" class="tip" />
+	<img src="__MONKEYSTYLE__images/wmp/share_pop_img2.png" class="tip" />
+	<img src="__MONKEYSTYLE__images/wmp/share_pop_img3.png" class="tip" />
+	<img src="__MONKEYSTYLE__images/wmp/share_pop_img4.png" class="tip" />
+</div>
+<!--电话-->
+<div class="contactway">
+	<a href="javascript:void(0);" id="contactWayBtn" class="contactway_btn"><img src="__MONKEYSTYLE__images/wmp/tel_icon.png" /></a>
+	<div class="contactway_con" id="contactWayCon">
+		<img src="__MONKEYSTYLE__images/wmp/contact_title_img.jpg" class="contactway_con_pic" />
+		<div class="contactway_main">
+			<ul>
+           
+				<li class="clr"><span class="contactway_main_left">联系人:{:C('CONTACT_NAME')}</span></li>
+                <?php $phones = C('CONTACT_PHONE'); if(!empty($phones)){ $phone = explode(',',$phones); ?>
+				<li class="clr">               	
+					<span class="contactway_main_left">电话：{$phone[0]}</span>
+					<a href="tel:{$phone}" class="contactway_main_clickbtn">呼叫</a>
+				</li>
+                <?php } ?>
+				<?php $qqs = C('COMPANY_CONSULTING');if(!empty($qqs)){ $qq = explode(',',$qqs); ?>
+                <li class="clr">
+					<span class="contactway_main_left">Q Q：{$qq[0]}</span>
+					<a href="http://wpa.qq.com/msgrd?v=3&uin={$qq[0]}&site=qq&menu=yes" class="contactway_main_clickbtn">交谈</a>
+				</li>
+               <?php } ?>
+				<li class="clr"><span class="contactway_main_left contactway_main_address">地址：{:C('COMPANY_ADDRESS')}</span></li>
+
+			</ul>
+		</div>
+	</div>
+	<div class="contactway_mask" id="contactWayMask"></div>
+</div>
+<!--音乐-->
+<div class="music on" data-switch="on" id="music">
+    <audio loop src="__MONKEYSTYLE__images/wmp/music.mp3" id="media" preload="preload"></audio>
+</div>
+<script type="text/javascript" src="__WEBMONKEY__/js/jquery/swiper/3.2.7/swiper.jquery.min.js"></script>
+<script type="text/javascript" src="__WEBMONKEY__/js/jquery/swiper/3.2.7/swiper.animate.min.js"></script>
+<script type="text/javascript" src="__WEBMONKEY__/js/jquery/toucher/toucher.js"></script>
+<script type="text/javascript" src="__WEBSITETLP__wmp/{$config.wmp_style}/js/dist/website.mobile.min.js"></script>
+<script>
+$(document).ready(function(e) {
+	wmp.homebanner();
+	wmp.contactTel();
+	wmp.music();
+});        
+</script>
+</body>
+</html>

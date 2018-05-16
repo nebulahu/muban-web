@@ -1,0 +1,29 @@
+<include file="Public/header"/>
+        <div class="center">
+           <div class="classtitle">
+                      <div class="tit about">公<span class="pdr10">|</span>司<span class="pdr10">|</span>简<span class="pdr10">|</span>介</div>
+                      <div class="cont">ABOUT US<br>奇石精品 只如初见</div>                  
+            </div>
+            </div>
+            
+                <div class="pagein-introduction-detail">
+                    <div class="module-editor clr">
+                      	<!-- 获取文章标题 -->
+                        <think:article id="157">
+             {$article['content']}	
+             </think:article>
+                        {$article['description']}	<!-- 获取文章简介 -->
+                       	<!-- 获取文章内容（编辑器） -->
+                        <img src="{$article.cover_id|get_cover='path'}" />	<!-- 获取文章封面 -->
+                    </div>
+                </div>
+			
+        </div>
+<include file="Public/footer"/>
+<script>
+			$(function(){	
+				mainindex.menu('about');
+			})	
+ </script>
+ </body>
+ </html>

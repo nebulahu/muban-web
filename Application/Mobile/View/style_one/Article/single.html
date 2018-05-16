@@ -1,0 +1,32 @@
+<include file="Public/header"/>
+<!-- 公司简介 -->
+<div class="tps-introduce">
+	<div class="tps-title">
+		<div class="name">公司简介</div>
+	</div>
+	<div class="tps-introduce-detail">
+		<div class="tps-editor">
+			<think:article id="8">
+				{$article['content']}
+			</think:article>
+		</div>
+	</div>
+</div>
+
+
+<div class="tps-position clr">
+	<a href="{:U('index/index')}" class="link">首页</a>
+	<i class="iconright">&nbsp;&raquo;&nbsp;</i>
+	<span class="last a_hidden">公司简介</span>
+</div>
+
+<include file="Public/footer"/>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	pageinit.aboutus();
+});
+	
+</script>
+
+</body>
+</html>

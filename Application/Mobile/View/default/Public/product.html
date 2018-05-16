@@ -1,0 +1,47 @@
+<!-- 最新产品 -->
+<div class="tps_product">
+	<div class="tps_title clr">
+		<div class="name">最新产品</div>
+		<a href="javascript:void(0);" id="sortPopBtn" class="popbtn" title="分类">
+			<img src="__MONKEYSTYLE__images/shops_title_popbtn.png" class="sort_icon" />
+		</a>
+	</div>
+	<div class="main">
+		<ul>
+			<article:list name="vo" category="$cid" row="$category['list_row']">
+				<li class="display_flex">
+					<?php if(!empty($vo['cover_id'])){ ?>
+					<a href="{:U('Article/detail?id='.$vo['id'])}" title="" class="pic">
+						<img src="{$vo.cover_id|get_cover='url'}" alt="{$vo.title}" />
+					</a>
+					<div class="item">
+						<a href="{:U('Article/detail?id='.$vo['id'])}" title="" class="name">{$vo.title}</a>
+						<i class="border"></i>
+						<div class="city">地区：中国江西省景德镇市</div>
+						<div class="city"><span class="price">面议</span><span class="num">起批量：0套</span></div>
+					</div>
+					<?php } ?>
+				</li>
+			</article:list>
+			
+		</ul>
+	</div>
+</div>
+<!-- 产品分类 -->
+		
+<div class="tps_mask" id="tpsCatePop">
+	<div class="tps_sortpop">
+		<div class="title clr">
+			<a href="javascript:void(0);" class="icon" id="sortPopClose"></a>
+			<h3 class="h">分类</h3>
+		</div>
+		<div class="main">
+			<ul>
+				<li class="all"><a href="/hcgcjx/sell/">全部</a></li>
+				<think:cate pid="45">
+				<li><a href="{:U('Article/lists?category='.$cate['name'])}">{$cate.title}</a></li>
+				</think:cate>
+			</ul>
+		</div>
+	</div>
+</div>

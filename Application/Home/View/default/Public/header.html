@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><if condition="$title">{$title}-</if>{:C('COMPANY_NAME')}</title>
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<meta name="applicable-device" content="pc">
+<?php $site_url='http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"]; ?>
+<meta property="og:url" content="{$site_url}"/>
+<?php $logo_img = C('CONPANY_LOGO');?>
+<meta property="og:image" content="{$logo_img|get_cover='path'}"/>
+<meta content="{$keywords}" name="keywords" />
+<meta content="{$description}" name="description" />
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="bookmark" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" href="__CSS__/src/cs.css">
+<link rel="stylesheet" type="text/css" href="__CSS__/src/animate.min.css">
+ <script type="text/javascript" src="__WEBMONKEY__/js/jquery/jquery/1.8.3/jquery.js"></script>
+</head>
+
+<body>
+      <div class="top-wp">
+        <div class="top center">
+            <a class="logo fl" href="{:U('Index/index')}"><img  src="__IMG__/logo.png"></a>
+            <ul class="nav fr" id="nav">
+            	<li><a href="\"><span>网站首页<br>网站首页</span></a></li>
+            	<think:cate pid="0">
+                	<eq name="cate['id']" value="88">
+                    <li><a href="{:U('Article/lists?category=91')}"><span>产品中心<br>产品中心</span></a></li>
+                    <else />
+                	<li><a href="{:U('Article/lists?category='.$cate['id'])}"><span>{$cate['title']}<br>{$cate['title']}</span></a></li>
+                    </eq>
+                </think:cate>
+                <!--<li><a href="{:U('Article/lists?category=87')}">公司简介</a></li>
+                <li><a href="{:U('Article/lists?category=91')}">产品中心</a></li>
+                <li><a href="{:U('Article/lists?category=89')}">新闻动态</a></li>
+                <li><a href="{:U('Article/lists?category=90')}">联系我们</a></li>-->
+            </ul>
+        </div>   
+      </div>
+     {:W('Category/banner',array('default'))}
+      <div class="main">

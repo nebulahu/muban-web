@@ -1,0 +1,78 @@
+<include file="Public/header"/>
+<!-- 最新产品 -->
+<div class="tps-product">
+	<div class="tps-title tps-title-category">
+		<div class="name">产品分类</div>
+	</div>
+	<div class="tps-product-category">
+		<ul class="clr">
+        	<li><a href="{:U('Article/lists?category=45')}" class="link a_hidden">全部</a></li>
+			<think:cate pid="45">
+			<li><a href="{:U('Article/lists?category='.$cate['name'])}" class="link a_hidden">{$cate.title}</a></li>
+			</think:cate>	
+		</ul>
+	</div>
+	<div class="tps-title">
+		<div class="name">产品展示</div>
+	</div>
+	<div class="tps-product-main">
+		<ul class="clr">
+			<article:list name="vo" category="$cid" child='true' row="$category['list_row']">
+				<li>
+					<?php if(!empty($vo['cover_id'])){ ?>
+					<a href="{:U('Article/detail?id='.$vo['id'])}" title="" class="linkimg">
+						<img src="{$vo.cover_id|get_cover='url'}" class="pic" alt="{$vo.title}" />
+					</a>
+                    <?php } ?>
+					<div class="item">
+						<a href="{:U('Article/detail?id='.$vo['id'])}" title="{$vo.title}" class="name a_hidden">{$vo.title}</a>
+                        <?php $price = '';$price = getFieldByAid($vo['id'],$vo['model_id'],"price");?>
+                        <if condition="$price neq ''">
+						<a class="info clr"><span class="price">¥{$price}</span><span class="btn">详情</span></a>
+                        </if>
+					</div>
+				</li>
+			</article:list>
+		</ul>
+	</div>
+    <article:pagewap cate="$cid" listrow="$category['list_row']"/>
+    </article:pagewap>
+	<include file="Public/pages"/>
+    
+</div>
+
+<!-- 产品分类
+<div class="tps_mask" id="tpsCatePop">
+	<div class="tps_sortpop">
+		<div class="title clr">
+			<a href="javascript:void(0);" class="icon" id="sortPopClose"></a>
+			<h3 class="h">分类</h3>
+		</div>
+		<div class="main">
+			<ul>
+				<li class="all"><a href="{:U('Article/lists?category=45')}">全部</a></li>
+				<think:cate pid="45">
+				<li><a href="{:U('Article/lists?category='.$cate['name'])}">{$cate.title}</a></li>
+				</think:cate>
+			</ul>
+		</div>
+	</div>
+</div> -->
+
+
+<div class="tps-position clr">
+	<a href="{:U('index/index')}" class="link">首页</a>
+	<i class="iconright">&nbsp;&raquo;&nbsp;</i>
+	<span class="last a_hidden">产品列表</span>
+</div>
+
+<include file="Public/footer"/>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	pageinit.productlist();
+});
+	
+</script>
+
+</body>
+</html>

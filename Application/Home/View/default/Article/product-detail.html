@@ -1,0 +1,48 @@
+<include file="Public/header"/>
+	<div class="center">
+    	 <div class="classtitle">
+                      <div class="tit about">产<span class="pdr10">|</span>品<span class="pdr10">|</span>详<span class="pdr10">|</span>情</div>
+                      <div class="cont">PRODUCT DETAIL<br>奇石精品 只如初见</div>                  
+          </div>
+     <div class="pagein-newsdetail">
+    <div class="crumbs">当前位置：<a href="{:U('Index/index')}">首页</a>>><a href="{:U('Article/lists?category=91')}">产品中心</a>>>奇石盛宴</div>
+    <div class="pictext clr">
+    	<img class="img-intro" src="__IMG__/ceramiclist3.jpg" alt="">
+        <div class="text-intro">
+        	<div class="fl">
+        	<span class="h1">{$vo['title']}</span>
+            <p class="introduce">物品描述：{$info['description']}</p>
+            <span class="name">品名：{$vo['brand']}</span>
+            <span class="mark">市场价：<em class="del">{$info['seller']}</em></span>
+            <span class="price">价格：<em>{$info['price']}</em></span>
+            </div>
+            <div class="saoyis ">
+            	扫一扫：
+                 <?php $imgcode = C('COMPANY_IMGCODE');?>
+              <img src="{$imgcode|get_cover='path'}" alt="" />
+            </div>
+            
+            <div class="module-articpages clr">
+            <article:prev name="prev" info="info" >
+            <div class="a_hidden prev"><a href="{:U('?id='.$prev['id'])}" class="link">上一个：{$prev['title']}</a></div>
+            </article:prev>	
+            <article:next name="next" info="info">
+            <div class="a_hidden next"><a href="{:U('?id='.$next['id'])}" class="link">下一个：{$next['title']}</a></div>
+            </article:next>
+          
+        </div>
+        </div>
+    </div>
+     	<div class="module_editor product-introduce">
+		{$info['content']}
+	</div>
+	</div>
+    </div>
+<include file="Public/footer"/>
+	<script>
+		$(function(){
+			mainindex.menu('product');
+		})	
+	</script>
+     </body>
+</html>

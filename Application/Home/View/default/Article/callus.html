@@ -1,0 +1,46 @@
+<include file="Public/header"/>
+	<div class="center"> 
+				<div class="classtitle">
+                  <div class="tit about">联<span class="pdr10">|</span>系<span class="pdr10">|</span>我<span class="pdr10">|</span>们</div>
+                  <div class="cont">CONTACT US<br/>奇石精品 只为初见</div>                  
+              </div>
+	<div class="pagein-contactus">
+	<think:article id="129">
+		<ul class="clr">
+			
+			<li>
+				<img src="__IMG__/icon-contact1.png" class="pic">
+				<p class="txt">电话：{:C('CONTACT_PHONE')}<br>邮箱：{:C('COMPANY_EMAIL')}</p>
+			</li>
+			<li>
+				<img src="__IMG__/icon-contact2.png" class="pic">
+				<p class="txt">地址：{:C('COMPANY_ADDRESS')}</p>
+			</li>
+			<?php $imgcode = C('COMPANY_IMGCODE');?>	<!--二维码图片复制变量-->
+			<li>
+				<img src="__IMG__/icon-contact3.png" class="pic">
+				<if condition="$imgcode neq ''"> 	<!--判断图片是否存在-->
+				<img src="{$imgcode|get_cover='path'}" class="codeimg" />
+				<else/>
+				<img src="__IMG__/codeimg.jpg" class="codeimg" /> 	<!--不存在时的默认图片-->
+				</if>
+			</li>
+		</ul>
+	</think:article>
+	{:hook('Map')}	<!--百度地图-->
+</div>
+	
+    </div>
+    {:W('Category/comment')}
+    <script type="text/javascript" src="http://webmonkey.d17.cc/js/jquery/vaildform/vaildform.js"></script>
+<include file="Public/footer"/>
+
+<script>
+			$(function(){	
+				mainindex.menu('contact');
+				mainindex.formSub();
+			})	
+ </script>
+ </body>
+ </html>
+      

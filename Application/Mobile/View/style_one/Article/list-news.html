@@ -1,0 +1,42 @@
+<include file="Public/header"/>
+<!-- 新闻资讯 -->
+<div class="tps-news">
+	<div class="tps-title">
+		<div class="name">新闻资讯</div>
+	</div>
+	<div class="tps-news-main">
+		<ul>
+			<article:list name="vo" category="$cid" child='true'  row="$category['list_row']">
+				<li class="display_flex">
+					<?php if(!empty($vo['cover_id'])){ ?>
+					<a href="{:U('Article/detail?id='.$vo['id'])}" class="linkimg"><img src="{$vo.cover_id|get_cover='url'}" class="pic" alt="{$vo.title}" /></a>
+					<?php } ?>
+					<div class="item">
+						<a href="{:U('Article/detail?id='.$vo['id'])}" class="name a_hidden">{$vo.title}</a>
+						<?php if(!empty($vo['description'])){ ?>
+						<p class="tips">{$vo.description|msubstr=0,26}</p>
+						<span title="time" class="time">{$vo.create_time|date='Y-m-d',###}</span>
+						<?php } ?>
+					</div>
+				</li>
+			</article:list>
+		</ul>
+	</div>
+</div>
+
+<div class="tps-position clr">
+	<a href="{:U('index/index')}" class="link">首页</a>
+	<i class="iconright">&nbsp;&raquo;&nbsp;</i>
+	<span class="last a_hidden">新闻资讯</span>
+</div>
+
+<include file="Public/footer"/>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	pageinit.newslist();
+});
+	
+</script>
+
+</body>
+</html>

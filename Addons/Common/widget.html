@@ -1,0 +1,146 @@
+<!-- 在线留言 -->
+<div class="form-style">
+	<form id="msgForm" name="form" method="post" >
+			<div class="li clr">
+				<div class="title"><i>*</i>您的姓名：</div>
+				<div class="item inputtext">
+					<input type="text" id="username" name="username" placeholder="请填写姓名"></input>
+					<label class="Validform_checktip"></label>
+					<label class="message">请输入中文姓名，不超过6个字!</label>
+				</div>
+			</div>
+			<div class="li clr">
+				<div class="title"><i>*</i>联系方式：</div>
+				<div class="item inputtext clr">
+					<input type="text" id="phone" name="phone" placeholder="请填写手机号码"></input>
+					<label class="Validform_checktip"></label>
+					<label class="message">请输入手机号码</label>
+				</div>
+			</div>
+			<div class="li clr">
+				<div class="title"> 地 址：</div>
+				<div class="item inputtext clr">
+					<input type="text" id="address" name="address" placeholder="请填写地址"></input>
+					<label class="Validform_checktip"></label>
+					<label class="message">请填写地址</label>
+				</div>
+			</div>
+			<div class="li clr">
+				<div class="title"> 邮 箱：</div>
+				<div class="item inputtext clr">
+					<input type="text" id="email" name="email" placeholder="请填写邮箱"></input>
+					<label class="Validform_checktip"></label>
+					<label class="message">请填写邮箱</label>
+				</div>
+			</div>
+           
+			<div class="li clr">
+				<div class="title"><i>*</i>留言内容：</div>
+				<div class="item textareainput clr">
+					<textarea id="remarks" name="contents"></textarea>
+					<label class="Validform_checktip"></label>
+					<label class="message">请输入留言内容，不超过200字！</label>
+				</div>
+               
+			</div>
+            <input type="hidden" name="time" value="{$time}">
+            <input type="hidden" name="ip" value="{$ip}">
+			<div class="li clr">
+				<div class="title"> </div>
+				<div class="item submit clr">
+					<p class="tip">我们将对您的个人信息采取保密措施，请您务必如实填写</p>
+					<input type="button" id="submitButton" class="submit-btn" value="提交"></input>
+				</div>
+			</div>
+	</form>
+</div>
+
+<script type="text/javascript" src="__WEBMONKEY__js/jquery/vaildform/validform5.3.2.js"></script>
+<script>
+$(function(){
+	
+	var form = {},
+		formIdObj = $('#msgForm');
+	/**
+	 * 绑定表单里输入框的聚焦事件
+	 */
+	form.bindFormInputFocusEvent = function(){
+		formIdObj.find('input,textarea').focus(function(){
+			$(this).nextAll('.message').css('display','inline-block').prev('.Validform_checktip').hide();
+		}).blur(function(){
+			$(this).nextAll('.message').hide().prev('.Validform_checktip').css('display','inline-block');
+		}).keyup(function(){
+			$(this).nextAll('.message').hide();
+		});
+	};
+	
+	/**
+	 * 验证注册
+	 */
+	form.validMsg = function(){
+		var formvalid = formIdObj.Validform({
+			 tiptype:3,
+			 showAllError:true,
+			 ignoreHidden:true,
+			 btnSubmit:"#submitButton",
+			 beforeSubmit : function(curform) {
+				form.submitForm();
+				
+				return false;
+			 }
+			 
+		});
+		formvalid.addRule([
+			{
+				ele:"#username",
+				datatype:/^[\u4E00-\u9FA5\uf900-\ufa2d]{2,6}$/,
+				nullmsg:"请输入中文姓名！",
+				errormsg:"请正确输入中文姓名!"
+			},
+			{
+				ele:"#phone",
+				datatype:/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/,
+				nullmsg:"请输入电话号码！",
+				errormsg:"请正确填写手机号格式、如：13511111111"
+			},
+			{
+				ele:"#address",
+				datatype:"*1-50",
+				ignore:"ignore",
+				errormsg:"请正确输入地址，不超过50字"
+			},
+			{
+				ele:"#email",
+				datatype:"e",
+				ignore:"ignore",
+				errormsg:"请正确输入邮箱！"
+			},
+			{
+				ele:"#remarks",
+				datatype:"*1-200",
+				nullmsg:"请输入留言内容！",
+				nullmsg:"请正确输入留言内容，不超过200字！"
+			}
+		]);
+	};
+	
+	form.submitForm = function(){
+		$.ajax({
+			type : 'POST',
+			url : '{$action}',
+			data : formIdObj.serialize(),
+			dataType : 'json',
+			success : function(data){
+				if(data.status){
+					layer.alert(data.message, {icon: 6});
+				}else{
+					layer.alert(data.message, {icon: 5});
+				}
+			}
+		});
+
+	};
+	form.bindFormInputFocusEvent();
+	form.validMsg();
+})
+</script>

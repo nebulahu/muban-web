@@ -1,0 +1,193 @@
+[ 2017-05-26T16:31:50+08:00 ] ::1 /tongyongmuban/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+SQL: SHOW COLUMNS FROM `onethink_hooks` [ RunTime:0.0645s ]
+SQL: SELECT `name`,`addons` FROM `onethink_hooks`  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `onethink_addons` [ RunTime:0.0229s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('SeoCnzz')  [ RunTime:0.0015s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0017s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0008s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0008s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0007s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('Focus')  [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('SuperLinks')  [ RunTime:0.0011s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('Scanlogin')  [ RunTime:0.0201s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('Common')  [ RunTime:0.0008s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('Map')  [ RunTime:0.0005s ]
+SQL: SELECT `id`,`name` FROM `onethink_addons` WHERE `status` = 1 AND `name` IN ('Message')  [ RunTime:0.0011s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.356027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.375053s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012005s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.0253s ]
+SQL: SELECT `type`,`name`,`value` FROM `onethink_config` WHERE `status` = 1  [ RunTime:0.0025s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: cate D:\wamp\www\tongyongmuban\ThinkPHP\Library\OT\TagLib\Article.class.php 第 57 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002432s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003073s ]
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.0328s ]
+SQL: SELECT * FROM `onethink_category` WHERE ( display=1 AND status=1 AND pid=0 ) ORDER BY sort  [ RunTime:0.0022s ]
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+SQL: SHOW COLUMNS FROM `onethink_focus` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `onethink_focus` WHERE `groups` = 'default' ORDER BY sort asc,id desc  [ RunTime:0.0009s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\tongyongmuban\Addons\Focus\Model\FocusModel.class.php 第 71 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000159s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.170867s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011023s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011300s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.009374s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009623s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.0130s ]
+SQL: SELECT * FROM onethink_document __DOCUMENT INNER JOIN onethink_document_article ON __DOCUMENT.id = onethink_document_article.id  WHERE ( status=1 AND __DOCUMENT.id=138 ) ORDER BY level desc,create_time desc LIMIT 1   [ RunTime:0.0059s ]
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+SQL: SELECT * FROM onethink_document __DOCUMENT INNER JOIN onethink_document_article ON __DOCUMENT.id = onethink_document_article.id  WHERE ( status=1 AND __DOCUMENT.id=156 ) ORDER BY level desc,create_time desc LIMIT 1   [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.0106s ]
+SQL: SELECT `id` FROM `onethink_category` WHERE `pid` = 88 ORDER BY id asc  [ RunTime:0.0008s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\tongyongmuban\Runtime\Cache\Home\769e70f2e46f34ceb60619bbda5e4691.php 第 70 行.
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.0158s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `onethink_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` IN ('') AND `create_time` < 1495787508 AND ( deadline = 0 OR deadline > 1495787508 ) AND (  position & 4 = 4 ) LIMIT 6   [ RunTime:0.0016s ]
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `onethink_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 91 AND `create_time` < 1495787508 AND ( deadline = 0 OR deadline > 1495787508 ) ORDER BY `level` DESC,`id` DESC LIMIT 0,8   [ RunTime:0.0014s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `onethink_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 92 AND `create_time` < 1495787508 AND ( deadline = 0 OR deadline > 1495787508 ) ORDER BY `level` DESC,`id` DESC LIMIT 0,8   [ RunTime:0.0014s ]
+SQL: SELECT * FROM onethink_document __DOCUMENT INNER JOIN onethink_document_article ON __DOCUMENT.id = onethink_document_article.id  WHERE ( status=1 AND __DOCUMENT.id=138 ) ORDER BY level desc,create_time desc LIMIT 1   [ RunTime:0.0012s ]
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `onethink_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 89 AND `create_time` < 1495787508 AND ( deadline = 0 OR deadline > 1495787508 ) ORDER BY `level` DESC,`id` DESC LIMIT 0,4   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `onethink_picture` [ RunTime:0.0756s ]
+SQL: SELECT * FROM `onethink_picture` WHERE `status` = 1 AND `id` = 602 LIMIT 1   [ RunTime:0.0020s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.220252s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011300s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000064s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.199575s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.012397s ]
+INFO: [ app_end ] --END-- [ RunTime:0.012669s ]
+
+[ 2017-05-26T16:31:51+08:00 ] ::1 /tongyongmuban/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.012101s ]
+INFO: [ app_init ] --END-- [ RunTime:0.013176s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001631s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.0093s ]
+SQL: SELECT `type`,`name`,`value` FROM `onethink_config` WHERE `status` = 1  [ RunTime:0.0041s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: cate D:\wamp\www\tongyongmuban\ThinkPHP\Library\OT\TagLib\Article.class.php 第 57 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000386s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001299s ]
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.0142s ]
+SQL: SELECT * FROM `onethink_category` WHERE ( display=1 AND status=1 AND pid=0 ) ORDER BY sort  [ RunTime:0.0017s ]
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+SQL: SHOW COLUMNS FROM `onethink_focus` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `onethink_focus` WHERE `groups` = 'default' ORDER BY sort asc,id desc  [ RunTime:0.0019s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\tongyongmuban\Addons\Focus\Model\FocusModel.class.php 第 71 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000157s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.080845s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012926s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013415s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001476s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001729s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.0247s ]
+SQL: SELECT * FROM onethink_document __DOCUMENT INNER JOIN onethink_document_article ON __DOCUMENT.id = onethink_document_article.id  WHERE ( status=1 AND __DOCUMENT.id=138 ) ORDER BY level desc,create_time desc LIMIT 1   [ RunTime:0.0017s ]
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+SQL: SELECT * FROM onethink_document __DOCUMENT INNER JOIN onethink_document_article ON __DOCUMENT.id = onethink_document_article.id  WHERE ( status=1 AND __DOCUMENT.id=156 ) ORDER BY level desc,create_time desc LIMIT 1   [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.0171s ]
+SQL: SELECT `id` FROM `onethink_category` WHERE `pid` = 88 ORDER BY id asc  [ RunTime:0.0018s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\tongyongmuban\Runtime\Cache\Home\769e70f2e46f34ceb60619bbda5e4691.php 第 70 行.
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.0106s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `onethink_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` IN ('') AND `create_time` < 1495787510 AND ( deadline = 0 OR deadline > 1495787510 ) AND (  position & 4 = 4 ) LIMIT 6   [ RunTime:0.0023s ]
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `onethink_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 91 AND `create_time` < 1495787510 AND ( deadline = 0 OR deadline > 1495787510 ) ORDER BY `level` DESC,`id` DESC LIMIT 0,8   [ RunTime:0.0021s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `onethink_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 92 AND `create_time` < 1495787510 AND ( deadline = 0 OR deadline > 1495787510 ) ORDER BY `level` DESC,`id` DESC LIMIT 0,8   [ RunTime:0.0023s ]
+SQL: SELECT * FROM onethink_document __DOCUMENT INNER JOIN onethink_document_article ON __DOCUMENT.id = onethink_document_article.id  WHERE ( status=1 AND __DOCUMENT.id=138 ) ORDER BY level desc,create_time desc LIMIT 1   [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+NOTIC: [8] Undefined variable: _key D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] String offset cast occurred D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1631 行.
+NOTIC: [8] Undefined variable: rule_status D:\wamp\www\tongyongmuban\ThinkPHP\Common\functions.php 第 1652 行.
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `onethink_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 89 AND `create_time` < 1495787510 AND ( deadline = 0 OR deadline > 1495787510 ) ORDER BY `level` DESC,`id` DESC LIMIT 0,4   [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `onethink_picture` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `onethink_picture` WHERE `status` = 1 AND `id` = 602 LIMIT 1   [ RunTime:0.0013s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.137017s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013415s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000069s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.122255s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001574s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001909s ]
+

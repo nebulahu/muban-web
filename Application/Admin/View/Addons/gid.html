@@ -1,0 +1,13 @@
+<extend name="Public/base" />
+<block name="sidebar">
+    <include file="Article/sidemenu" />
+</block>
+<block name="body">
+	<form method="post" action="{:U('Addons/dogid')}">
+    	<input type="hidden" name="gid" value="{$gid}">
+        <input type="hidden" name="id" value="{$id}">
+        <div>管理员回复：</div>
+        <textarea name="respond" id="conterBox" cols="30" placeholder="快来说几句吧~" rows="10" class="box"></textarea>
+    	<input type="submit" value="提交">
+    </form>
+</block>

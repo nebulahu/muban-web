@@ -1,0 +1,44 @@
+<include file="Public/header"/>
+          <div class="product-list center">
+               <div class="classtitle">
+                  <div class="tit product">产<span class="pdr10">|</span>品<span class="pdr10">|</span>中<span class="pdr10">|</span>心</div>
+                  <div class="cont">Product Center<br>届时精品 有缘者得</div>                  
+              </div>
+              <ul class="pro-classfiy">
+              	<think:cate pid="88">
+                <eq name="cate['id']" value="$category['id']">
+                <li class="on"><a href="{:U('Article/lists?category='.$cate['id'])}">{$cate['title']}</a></li>
+                <else />
+                <li><a href="{:U('Article/lists?category='.$cate['id'])}">{$cate['title']}</a></li>
+                </eq>
+                </think:cate>
+                
+              </ul>
+              <div class="pro-content center">
+                <ul class="qishi on">
+                	<article:list name="vo" category="$cid" row="$category['list_row']">
+                        <li>
+                            <a href="{:U('Article/detail','id='.$vo['id'])}"><img class="goods" src="__IMG__/product1.jpg" alt="" /></a>
+                         
+                            <div class="goods-intro">
+                                <span class="ft-big a_hidden">{$vo['title']}</span>
+                                <?php $info = D('Document')->detail($vo['id']);?>
+                                <span class="cl-gr">{$info['brand']}</span>
+                                <span>市场价：<em class="del">{$info['seller']}</em></span>
+                                <span>现价：<em class="cl-red">{$info['price']}</em></span>
+                            </div>
+                        </li>
+                    </article:list>
+                </ul>            
+              </div>
+          </div>
+          <article:page cate="$cid" listrow="$category['list_row']"/>  
+<include file="Public/footer"/>
+<script>
+			$(function(){	
+				mainindex.menu('product');
+			})	
+ </script>
+ </body>
+ </html>
+      

@@ -1,0 +1,61 @@
+<!-- 浮动联系我们 -->
+<!--<div class="tps_floatcontact">
+	<a href="tel:18070082180" title="联系商家" class="btn btn1">联系商家</a>
+	<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=305007930&amp;site=qq&amp;menu=yes" title="在线咨询" class="btn btn2">在线咨询</a>
+</div>-->
+<div class="tps-footer">
+	<div class="tps-footer-main">
+	    <a href="/membercenter/login.php" class="btn">登录</a>
+	    <a href="http://m.d17.cc/single/extension.php" class="btn">注册</a>
+	</div>
+	<div class="copy">
+		<a href="http://www.d17.cc/">电脑版</a>&nbsp;|&nbsp;<a href="http://m.d17.cc/">移动版</a>
+		<p>{:C('WEB_SITE_ICP')}<br />第一枪 版权所有</p>
+	</div>
+</div>
+<div class="tps-tool clr" id="tool">
+	<a href="{:U('Index/index')}" class="btn btn1"><span class="tip">首页</span></a>
+    <?php $phones = C('CONTACT_PHONE'); if(!empty($phones)){ $phone = explode(',',$phones);} ?>
+	<a href="etel:{$phone[0]}" class="btn btn2"><span class="tip">电话</span></a>
+	<a href="{:U('Index/wmp')}" class="btn btn3"><span class="tip">微名片</span></a>
+	<a href="{:U('Article/map')}" class="btn btn4"><span class="tip">地图</span></a>
+</div>
+<!--浮动小球-->
+<div class="tps-wrap">
+	<div class="tps-wrap-touch">
+		<span></span>
+	</div>
+</div>
+<div class="tps-quicknav clr" id="quickNav">
+	<if condition="$_temp_config['company_cid'] neq 0">
+	<a href="{:U('Article/lists?category='.$_temp_config['company_cid'])}" class="link link1" title="{$_temp_config['company_cid']|get_category=###,title}">
+		<span class="tip">{$_temp_config['company_cid']|get_category=###,title}</span>
+	</a>
+    </if>
+    <if condition="$_temp_config['product_cid'] neq 0">
+	<a href="{:U('Article/lists?category='.$_temp_config['product_cid'])}" class="link link2" title="{$_temp_config['product_cid']|get_category=###,title}">
+		<span class="tip">{$_temp_config['product_cid']|get_category=###,title}</span>
+	</a>
+    </if>
+    <if condition="$_temp_config['news_cid'] neq 0">
+	<a href="{:U('Article/lists?category='.$_temp_config['news_cid'])}" class="link link3" title="{$_temp_config['news_cid']|get_category=###,title}">
+		<span class="tip">{$_temp_config['news_cid']|get_category=###,title}</span>
+	</a>
+    </if>
+    <if condition="$_temp_config['album_cid'] neq 0">
+	<a href="{:U('Article/lists?category='.$_temp_config['album_cid'])}" class="link link4" title="{$_temp_config['album_cid']|get_category=###,title}">
+		<span class="tip">{$_temp_config['album_cid']|get_category=###,title}</span>
+	</a>
+	</if>
+    <if condition="$_temp_config['relation_cid'] neq 0">
+	<a href="{:U('Article/lists?category='.$_temp_config['relation_cid'])}" class="link link5" title="{$_temp_config['relation_cid']|get_category=###,title}">
+		<span class="tip">{$_temp_config['relation_cid']|get_category=###,title}</span>
+	</a>
+    </if>
+</div>
+	
+
+
+<script type="text/javascript" src="__WEBMONKEY__/js/jquery/swiper/3.2.7/swiper.jquery.min.js"></script>
+<script type="text/javascript" src="__WEBMONKEY__/js/jquery/toucher/toucher.js"></script>
+<script type="text/javascript" src="__WEBSITETLP__{$_temp_config.html_dir}/{$_temp_config.style_dir}/js/dist/website.mobile.min.js"></script>

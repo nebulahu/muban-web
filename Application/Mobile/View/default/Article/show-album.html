@@ -1,0 +1,24 @@
+<include file="Public/header"/>
+<!-- 企业相册 -->
+<!--图片浏览-->
+<div class="picture_browsing" style="visibility: visible;background: rgba(0,0,0,1);">
+	<a href="javascript:history.go(-1);" class="close">关闭</a>
+	<!--<div class="swiper-container" id="pictureBrowsing">
+		<ul class="swiper-wrapper">
+			<li class="swiper-slide">
+				<div class="is_flexbox"><img src="http://img1.d17.cc/group1/M00/11/13/wKgAK1ae6QuIO0LUAAAAPFxFYb0AAAA9QDXDuoAAABU749.jpg" class="pic"></div>
+				<div class="name">南昌合昌工程机械有限公司1</div>
+			</li>
+			
+		</ul>
+		<div class="swiper-scrollbar picture_scrollbar"></div>
+	</div>-->
+	{$info['duotu']|get_wapAlbum=###,'picture','pictureBrowsing'}
+</div>
+<div class="tps_position clr" id="pageId" data-id="5">
+	<img src="__MONKEYSTYLE__images/bread_nav_ico.png">
+	<a href="{:U('index/index')}">首页</a>
+	<i class="iconright"></i>
+	<span>企业相册</span>
+</div>
+<include file="Public/footer"/>

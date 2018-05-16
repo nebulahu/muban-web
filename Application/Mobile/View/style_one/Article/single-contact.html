@@ -1,0 +1,52 @@
+<include file="Public/header"/>
+<!-- 联系方式 -->
+<div class="tps-contact">
+	<div class="tps-title">
+		<div class="name">联系方式</div>
+	</div>
+	<div class="tps-contact-main">
+		<ul>
+			<li class="clr">
+				<span class="tip">公司名称：</span>
+				<span class="item">{:C('COMPANY_NAME')}</span>
+			</li>
+			<li class="clr">
+				<span class="tip">联系人：</span>
+				<span class="item">{:C('CONTACT_NAME')}</span>
+			</li>
+			<li class="clr">
+				<span class="tip">联系电话：</span>
+				<span class="item">{:C('CONTACT_PHONE')}</span>
+			</li>
+			<li class="clr">
+				<span class="tip">公司地址：</span>
+				<span class="item">{:C('COMPANY_ADDRESS')}</span>
+			</li>
+			
+		</ul>
+	</div>
+	<?php $logo=C('COMPANY_IMGCODE'); if(!empty($logo)){ ?>
+	<div class="tps-contact-imgcode">
+		<img src="{$logo|get_cover='url'}" class="pic" alt="{:C('COMPANY_NAME')}" />
+		<span class="tip">扫一扫</span>
+	</div>
+	<?php } ?>
+	
+</div>
+
+<div class="tps-position clr">
+	<a href="{:U('index/index')}" class="link">首页</a>
+	<i class="iconright">&nbsp;&raquo;&nbsp;</i>
+	<span class="last a_hidden">联系方式</span>
+</div>
+
+<include file="Public/footer"/>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	pageinit.contact();
+});
+	
+</script>
+
+</body>
+</html>

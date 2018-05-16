@@ -1,0 +1,131 @@
+<include file="Public/header"/>
+      
+      
+          <div class="aboutus-wp center">
+              <div class="classtitle">
+                  <div class="tit about">关<span class="pdr10">|</span>于<span class="pdr10">|</span>我<span class="pdr10">|</span>们</div>
+                  <div class="cont">ABOUT US<br>奇石精品 只如初见</div>                  
+              </div>
+              <div class="aboutus">
+              <div class="left fl">
+                <div class="name">
+                    <span class="china">公司简介</span>
+                    COMPANY PROFILE
+                </div>
+                 <think:article id="138">
+                {$article['content']}
+                </think:article>
+              </div>
+                <img src="__IMG__/aboutusbg.png">
+                <a class="linkmore" href="{:U('Article/lists?category=87')}">MORE></a>
+                 <div class="right fr">
+                <div class="name">
+                    <span class="china">经营理念</span>
+                    BUSINESS PHILSOSPHY
+                     <think:article id="156">
+                {$article['content']}
+                </think:article>
+                </div>
+               
+              </div>
+              </div>
+          </div>
+          <div class="product center">
+             <div class="classtitle">
+                  <div class="tit product">产<span class="pdr10">|</span>品<span class="pdr10">|</span>中<span class="pdr10">|</span>心</div>
+                  <div class="cont">Product Center<br>届时精品 有缘者得</div>                  
+            </div>
+            <div class="pro-recommend">
+                
+              <div class="bd">
+                <ul class="picList">
+                
+                    <article:position name="vo" pos="4" pid="88" limit="6">
+                    	<li>
+                            <a href="{:U('Article/detail','id='.$vo['id'])}"><img class="goods" src="{$vo['cover_id']|get_cover='path'}"/></a>
+                            <?php $info = D('Document')->detail($vo['id']);?>
+                            <div class="text">
+                                <span class="breed a_hidden">{$vo['title']}</span>
+                                <span class="green">{$info['brand']}</span>
+                                <span class="price">市场价：<i class="del">{$info['seller']}</i></span>
+                                <span>现价：<i class="red">{$info['price']}</i></span>
+                            </div>
+                        </li>
+                    </article:position>
+                </ul>
+              </div>
+              <div class="hd"><ul></ul></div>
+            </div>
+            <div class="classify clr">
+              <div class="classify-tit clr">
+                <div class="left fl">
+                  奇石 / <span class="light">Shorts</span>
+                </div>
+               
+              </div>
+              <div class="fl">
+                  <div class="head shorts">
+                      <span class="intro">奇石盛宴</span>
+                  </div>
+                  <div class="texthead">
+                     <a class="more animated" href="{:U('Article/lists?category=91')}">更多商品 <span class="mt55">>></span></a>
+                  </div>
+              </div>
+              <ul class="prolist clr fl">
+              <article:list name="vo" category="91" row="8">
+                        <li>
+                            <a href="{:U('Article/detail','id='.$vo['id'])}"><img class="goods" src="{$vo['cover_id']|get_cover='path'}" alt="" /></a>
+                            <?php $info = D('Document')->detail($vo['id']);?>
+                                <span class="a_hidden">品名:  <em class="c-green">{$vo['title']}</em></span>
+                                <span class="a_hidden">石种： {$info['brand']}</span>
+                                <span>市场价：<em class="del">{$info['seller']}</em></span>
+                                <span>现价: <em class="c-red">¥{$info['price']}</em></span>
+                        </li>
+                </article:list>
+                
+              </ul>
+            </div>
+            <div class="classify clr">
+              <div class="classify-tit clr">
+                <div class="left fl">
+                  陶瓷 / <span class="light">Ceramics</span>
+                </div>
+               
+              </div>
+              <div class="fl">
+                  <div class="head ceramic">
+                      <span class="intro">国粹陶瓷</span>
+                  </div>
+                  <div class="texthead">
+                     <a class="more animated" href="">更多商品 <span class="mt55">>></span></a>
+                  </div>
+              </div>
+              <ul class="prolist clr fl">
+              	<article:list name="vo" category="92" row="8">
+                        <li>
+                            <a href="{:U('Article/detail','id='.$vo['id'])}"><img class="goods" src="{$vo['cover_id']|get_cover='path'}" alt="" /></a>
+                            <?php $info = D('Document')->detail($vo['id']);?>
+                                <span class="a_hidden">品名:  <em class="c-green">{$vo['title']}</em></span>
+                                <span class="a_hidden">石种： {$info['brand']}</span>
+                                <span>市场价：<em class="del">{$info['seller']}</em></span>
+                                <span>现价: <em class="c-red">¥{$info['price']}</em></span>
+                        </li>
+                </article:list>
+              </ul>
+            </div>
+          </div>  
+   		
+     <include file="Public/footer"/>
+     <script>
+			$(function(){	
+        		$(".pro-recommend").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:"<li></li>",effect:"left",autoPlay:true,vis:4,interTime:3000});
+				mainindex.menu('home');
+				$(".classify .more").hover(function(){
+					$(this).addClass("pulse");
+				},function(){
+					$(this).removeClass("pulse");
+				})
+			})	
+      </script>
+     </body>
+</html>

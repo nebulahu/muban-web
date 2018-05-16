@@ -1,0 +1,1 @@
+DROP TABLE onethink_focus;

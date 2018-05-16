@@ -1,0 +1,68 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<div class="main-title">
+		<h2>编辑</h2>
+	</div>
+	<form action="{:U('Order/edit')}" method="post" class="form-horizontal">
+    <volist name="list" id="vo">
+	    <label class="item-label">订单号：{$vo.order_sn}<span class="check-tips"></span></label>
+        <label class="item-label">下单人：{$vo.mid|get_nickname}<span class="check-tips"></span></label>
+        <label class="item-label">下单时间：{$vo.create_time|date='Y.m.d H:i',###}<span class="check-tips"></span></label>
+        <if condition="$vo.update_time neq ''">
+        <label class="item-label">修改时间：{$vo.update_time|date='Y.m.d H:i',###}<span class="check-tips"></span></label>
+        </if>
+        <label class="item-label">订单详情：<br/>   
+        <span class="check-tips"></span>        
+        </label>
+        <volist name="vo['goods']" id="vv">
+            <!--<img src="{$vv.cover_id|get_cover='path'}" alt="" class="pic">-->
+            <a href="{:C('SITE_URL')}Article/detail?id={$vv.goods_id}" target="_blank">{$vv.goods_name}</a>
+            ￥{$vv.price}
+            X{$vv.num}<br/>
+        </volist>       
+        <input type="hidden" name="order_id" value="{$vo.order_id}">
+		<div class="form-item">
+			<label class="item-label">订单价格<span class="check-tips">（订单总价，谨慎修改）</span></label>
+			<div class="controls">
+				<input type="text" class="text input-large" name="price" value="{$vo.price}">
+			</div>
+		</div>
+		
+		<div class="form-item">
+			<label class="item-label">订单状态<span class="check-tips">（请选择相应的状态）</span></label>
+			<div class="controls">
+				<select name="status">
+	                    <option value="0" <if condition="$vo.status eq 0">selected="selected"</if>>未处理</option>	
+                        <option value="1" <if condition="$vo.status eq 1">selected="selected"</if>>部分结清</option>	
+                        <option value="2" <if condition="$vo.status eq 2">selected="selected"</if>>已结清</option>				
+						<option value="-1" <if condition="$vo.status eq -1">selected="selected"</if>>关闭订单</option>
+				</select>
+			</div>
+		</div>
+		
+		<div class="form-item">
+			<label class="item-label">付款备注<span class="check-tips">（订单付款备注，用户可见）</span></label>
+			<div class="controls">
+				<label class="textarea input-large">
+					<textarea name="remarks">{$vo.remarks|default=''}</textarea>
+				</label>
+			</div>
+		</div>
+		<div class="form-item">
+			<button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+			<button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+		</div>
+    </volist>    
+	</form>
+</block>
+
+<block name="script">
+	<script type="text/javascript">
+		Think.setValue("type", {$info.type|default=0});
+		Think.setValue("group", {$info.group|default=0});
+		//导航高亮
+		highlight_subnav('{:U('Config/index')}');
+	</script>
+</block>
+

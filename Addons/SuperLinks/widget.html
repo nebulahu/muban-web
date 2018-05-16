@@ -1,0 +1,17 @@
+
+<if condition="$link.type eq 1">
+    <volist name="list" id="po">
+        <li><a href="{$po.link}" target="_blank">{$po.title}</li>
+    </volist>
+<elseif condition="$link.type eq 2" />
+    <volist name="list" id="po">
+        <li><a href="{$po.link}" target="_blank"><img src="{$po.path}" width="182" height="92" /></a></li>
+    </volist>
+<elseif condition="$link.type eq 3" />
+    <volist name="list" id="po">
+        <li>
+            <a href="{$po.link}" target="_blank"><img src="{$po.path}" width="182" height="92" /></a>
+            <a href="{$po.link}" target="_blank">{$po.title}</a>
+        </li>
+    </volist>
+</if>

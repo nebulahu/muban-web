@@ -1,0 +1,25 @@
+<div class="map-baidu" id="mapContent" style="height:320px"></div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=lhz9DQxkR2VkiGpvG4ci8oAU5BRs678y"></script>
+<script type="text/javascript">
+    // 百度地图API功能
+    var map2 = new BMap.Map("mapContent");
+    var point2 = new BMap.Point({$data['longitude']},{$data['latitude']});//定义一个中心点
+    map2.centerAndZoom(point2, 15);
+    map2.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+    map2.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
+    //map.addControl(new BMap.ZoomControl());
+
+    var marker2 = new BMap.Marker(new BMap.Point({$data['longitude']},{$data['latitude']}));  //创建标注
+    map2.addOverlay(marker2);    // 将标注添加到地图中
+    var opts = {
+        //width : 200,    // 信息窗口宽度
+        //height: 90,     // 信息窗口高度
+        title : "{$data['name']}", // 信息窗口标题
+        enableAutoPan : true //自动平移
+    }
+    var infoWindow = new BMap.InfoWindow("<?php $logo=C('COMPANY_LOGO'); if(!empty($logo)){ ?><img src='{$logo|get_cover='url'}' style='float:left;width:60px;margin: 5px 10px 5px 0;border-radius: 5px;' alt='{:C('COMPANY_NAME')}'><?php } ?><br />公司地址：{$data['address']}<br />联系电话：{$data['phone']}<br />邮箱：{$data['email']}", opts);  // 创建信息窗口对象
+    marker.addEventListener("click", function(){
+        map2.openInfoWindow(infoWindow,point2); //开启信息窗口
+    });
+</script>
+

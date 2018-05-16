@@ -1,0 +1,31 @@
+<?php
+return array(
+	'longitude'=>array(
+		'title'=>'经度',
+		'type'=>'text',
+	),
+	'latitude'=>array(
+		'title'=>'纬度',
+		'type'=>'text',
+	),
+	'name'=>array(
+		'title'=>'公司名',
+		'type'=>'text',
+	),
+	'address'=>array(
+		'title'=>'地址',
+		'type'=>'text',
+	),
+	'phone'=>array(
+		'title'=>'电话',
+		'type'=>'text',
+	),
+	'email'=>array(
+		'title'=>'邮箱',
+		'type'=>'text',
+	),
+	'size'=>array(
+		'title'=>'范围',
+		'type'=>'text',
+	),
+);

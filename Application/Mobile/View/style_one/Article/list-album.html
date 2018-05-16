@@ -1,0 +1,40 @@
+<include file="Public/header"/>
+
+<!-- 企业相册 -->
+<div class="tps-album">
+	<div class="tps-title">
+		<div class="name">企业相册</div>
+	</div>
+	<div class="tps-album-main">
+		<ul class="clr">
+			<article:list name="vo" category="$cid" row="$category['list_row']">
+			<li>
+				<a href="{:U('Article/detail?id='.$vo['id'])}" title="{$vo.title}" class="link">
+					<img src="{$vo.cover_id|get_cover='url'}" alt="{$vo.title}" class="pic" />
+				</a>
+				<div class="info clr">
+					<span class="name">{$vo.title}</span>
+					<span class="num">{$vo.update_time|date='Y-m-d',###}</span>
+				</div>
+			</li>
+			</article:list>
+		</ul>
+	</div>
+</div>
+
+<div class="tps-position clr">
+	<a href="{:U('index/index')}" class="link">首页</a>
+	<i class="iconright">&nbsp;&raquo;&nbsp;</i>
+	<span class="last a_hidden">企业相册</span>
+</div>
+
+<include file="Public/footer"/>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	pageinit.albumlist();
+});
+	
+</script>
+
+</body>
+</html>

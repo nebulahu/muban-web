@@ -1,0 +1,52 @@
+<include file="Public/header"/>
+<!-- 最新产品 -->
+<div class="tps-product">
+	<div class="tps-title tps-title-category">
+		<div class="name">产品分类</div>
+	</div>
+	<div class="tps-product-category">
+		<ul class="clr">
+        	<li><a href="{:U('Article/lists?category=45')}" class="link a_hidden">全部</a></li>
+			<think:cate pid="45">
+			<li><a href="{:U('Article/lists?category='.$cate['name'])}" class="link a_hidden">{$cate.title}</a></li>
+			</think:cate>	
+		</ul>
+	</div>
+	<div class="tps-title tps-title-detail">
+		<div class="name">产品详情</div>
+	</div>
+	<div class="tps-product-detail">
+		{$info['duotu']|get_wapduotu=###,'detailpic','picFocus'}
+		
+		<!--产品名称-->
+		<div class="info clr">
+			<h1 class="h1 a_hidden">{$info.title}</h1>
+			<span class="price">¥244</span>
+		</div>
+		
+		<!--产品描述-->
+		<div class="tps-title tps-title-item">
+			<div class="name">产品描述</div>
+		</div>
+		<div class="tps-editor">{$info.content}</div>
+	</div>
+</div>
+
+<div class="tps-position clr">
+	<a href="{:U('index/index')}" class="link">首页</a>
+	<i class="iconright">&nbsp;&raquo;&nbsp;</i>
+	<a href="{:U('index/index')}" class="link">产品列表</a>
+	<i class="iconright">&nbsp;&raquo;&nbsp;</i>
+	<span class="last a_hidden">{$info.title}</span>
+</div>
+
+<include file="Public/footer"/>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	pageinit.productdetail();
+});
+	
+</script>
+
+</body>
+</html>

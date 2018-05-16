@@ -1,0 +1,17 @@
+<include file="Public/header"/>
+<!-- 企业相册 -->
+<!--图片浏览-->
+<div class="picture_browsing" style="visibility: visible;background: rgba(0,0,0,1);">
+	<a href="javascript:history.go(-1);" class="close">关闭</a>
+	{$info['duotu']|get_wapAlbum=###,'picture','pictureBrowsing'}
+</div>
+
+<include file="Public/footer"/>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	pageinit.albumdetail();
+});	
+</script>
+
+</body>
+</html>

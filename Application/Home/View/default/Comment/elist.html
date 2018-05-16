@@ -1,0 +1,222 @@
+<include file="Public/header"/>
+	<div class="index_top clr">
+		<!-- <a href="javascript:void(0);" class="icon_left"></a> -->
+		<a href="javascript:void(0);" onclick="window.history.go(-1)" class="icon_left icon_left2"><</a>
+		<div class="text_con">累计评论</div>
+	</div>
+
+	<div class="evaluate_list_top">
+		<div class="left">
+			<div class="tit">综合评分</div>
+			<div class="fra">{$sinfo.score}</div>
+			<div class="stars cumulative_fraction clr" data="{$sinfo.score}">
+				<div class="lis">
+					<img src="__IMG__/icon_start.png" alt="" class="pic">
+				</div>
+				<div class="lis">
+					<img src="__IMG__/icon_start.png" alt="" class="pic">
+				</div>
+				<div class="lis">
+					<img src="__IMG__/icon_start.png" alt="" class="pic">
+				</div>
+				<div class="lis">
+					<img src="__IMG__/icon_start.png" alt="" class="pic">
+				</div>
+				<div class="lis">
+					<img src="__IMG__/icon_start.png" alt="" class="pic">
+				</div>
+			</div>
+		</div>
+		<ul class="right">
+			<li class="clr">
+				<div class="text">使用效果</div>
+				<div class="stars cumulative_fraction clr" data="{$sinfo.star1}">
+					<div class="lis">
+						<img src="__IMG__/icon_start.png" alt="" class="pic">
+					</div>
+					<div class="lis">
+						<img src="__IMG__/icon_start.png" alt="" class="pic">
+					</div>
+					<div class="lis">
+						<img src="__IMG__/icon_start.png" alt="" class="pic">
+					</div>
+					<div class="lis">
+						<img src="__IMG__/icon_start.png" alt="" class="pic">
+					</div>
+					<div class="lis">
+						<img src="__IMG__/icon_start.png" alt="" class="pic">
+					</div>
+				</div>
+				<div class="tion">
+					{$sinfo.star1}
+				</div>
+			</li>
+			<li class="clr">
+				<div class="text">产品质量</div>
+				<div class="stars cumulative_fraction clr" data="{$sinfo.star2}">
+					<div class="lis">
+						<img src="__IMG__/icon_start.png" alt="" class="pic">
+					</div>
+					<div class="lis">
+						<img src="__IMG__/icon_start.png" alt="" class="pic">
+					</div>
+					<div class="lis">
+						<img src="__IMG__/icon_start.png" alt="" class="pic">
+					</div>
+					<div class="lis">
+						<img src="__IMG__/icon_start.png" alt="" class="pic">
+					</div>
+					<div class="lis">
+						<img src="__IMG__/icon_start.png" alt="" class="pic">
+					</div>
+				</div>
+				<div class="tion">
+					{$sinfo.star2}
+				</div>
+			</li>
+			<li class="clr">
+				<div class="text">服务态度</div>
+				<div class="stars cumulative_fraction clr" data="{$sinfo.star3}">
+					<div class="lis">
+						<img src="__IMG__/icon_start.png" alt="" class="pic">
+					</div>
+					<div class="lis">
+						<img src="__IMG__/icon_start.png" alt="" class="pic">
+					</div>
+					<div class="lis">
+						<img src="__IMG__/icon_start.png" alt="" class="pic">
+					</div>
+					<div class="lis">
+						<img src="__IMG__/icon_start.png" alt="" class="pic">
+					</div>
+					<div class="lis">
+						<img src="__IMG__/icon_start.png" alt="" class="pic">
+					</div>
+				</div>
+				<div class="tion">
+					{$sinfo.star3}
+				</div>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="commodity_review_list">
+		<div class="main">
+			<div class="munber">
+				<a href="javascript:void(0);" class="text">全部({$count})</a>
+			</div>
+			<ul class="list" id="evaluationBuilding">
+            	<volist name="list" id="vo">
+				<li>
+					<div class="top clr">
+						<a href="javascript:void(0);" class="link_pic">
+							<img src="" alt="" class="pic">
+						</a>
+						<div class="name">{$vo.mid|getMemberInfo=###,nickname}</div>
+					</div>
+					<div class="cen">{$vo.content}</div>
+					<div class="time">{$vo.create_time|date='Y-m-d',###}</div>
+				</li>
+				</volist>
+			</ul>
+		</div>
+	</div>
+
+	<!--分页样式-->
+	<include file="Public/pages"/>
+
+	<div class="review_footer clr">
+		<a href="javascript:void(0);" class="link_left link_left2" id="shwoEvaluateBox">评论</a>
+		<a href="javascript:void(0);" class="right2">采购单</a>
+        <span class="add-shop-nums">{$_num}</span>
+	</div>
+
+	<form class="review_board" username="{$_user.username}" pic="__IMG__/icon_start.png">
+		<ul class="tab_box">
+			<li class="clr" value="5">
+				<div class="text">产品使用效果</div>
+				<div class="fraction_chose clr">
+					<div class="lis_fra_chose">
+						<img src="__IMG__/iconmun.png" alt="" class="pic">
+					</div>
+					<div class="lis_fra_chose">
+						<img src="__IMG__/iconmun.png" alt="" class="pic">
+					</div>
+					<div class="lis_fra_chose">
+						<img src="__IMG__/iconmun.png" alt="" class="pic">
+					</div>
+					<div class="lis_fra_chose">
+						<img src="__IMG__/iconmun.png" alt="" class="pic">
+					</div>
+					<div class="lis_fra_chose">
+						<img src="__IMG__/iconmun.png" alt="" class="pic">
+					</div>
+				</div>
+			</li>
+			<li class="clr" value="5">
+				<div class="text">产品质量</div>
+				<div class="fraction_chose clr">
+					<div class="lis_fra_chose">
+						<img src="__IMG__/iconmun.png" alt="" class="pic">
+					</div>
+					<div class="lis_fra_chose">
+						<img src="__IMG__/iconmun.png" alt="" class="pic">
+					</div>
+					<div class="lis_fra_chose">
+						<img src="__IMG__/iconmun.png" alt="" class="pic">
+					</div>
+					<div class="lis_fra_chose">
+						<img src="__IMG__/iconmun.png" alt="" class="pic">
+					</div>
+					<div class="lis_fra_chose">
+						<img src="__IMG__/iconmun.png" alt="" class="pic">
+					</div>
+				</div>
+			</li>
+			<li class="clr" value="5">
+				<div class="text">服务态度</div>
+				<div class="fraction_chose clr">
+					<div class="lis_fra_chose">
+						<img src="__IMG__/iconmun.png" alt="" class="pic">
+					</div>
+					<div class="lis_fra_chose">
+						<img src="__IMG__/iconmun.png" alt="" class="pic">
+					</div>
+					<div class="lis_fra_chose">
+						<img src="__IMG__/iconmun.png" alt="" class="pic">
+					</div>
+					<div class="lis_fra_chose">
+						<img src="__IMG__/iconmun.png" alt="" class="pic">
+					</div>
+					<div class="lis_fra_chose">
+						<img src="__IMG__/iconmun.png" alt="" class="pic">
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="main">
+			<textarea name="" id="evaluateInp" cols="30" rows="10" placeholder="分享你购买的心得" class="evaluate"></textarea>
+		</div>
+		<input comment-data-url="{:U('Comment/add')}" gid="{:I('gid')}" type="button" name="" id="subFormVal" value="提交" class="btns">
+
+	</form>
+	<div class="review_board_mask"></div>
+</body>
+<script type="text/javascript" src="__WEBMONKEY__//js/jquery/toucher/toucher.js"></script>
+<script src="__WEBMONKEY__/js/layer/layer/layer.js"></script>
+<script src="__JS__/dist/weilefu.mobile.min.js"></script>
+<script>
+
+weilefu.footerInter(1);
+weilefu.evaluationScore();
+weilefu.cumulativeScore();
+
+var mySwiper = new Swiper ('.swiper-container', {
+	autoplay: 5000,
+
+	pagination: '.swiper-pagination',
+
+}) 
+
+</script>
+</html>

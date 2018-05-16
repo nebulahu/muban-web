@@ -1,0 +1,160 @@
+
+<include file="Public/header"/>
+{:hook('DisplayFocus', array('group' => 'mobile','type' => '3','classname' => 'tps-banner','styleid' => 'picFocus'))}
+<!-- 导航 -->
+<nav class="tps_nav">
+	<div class="display_flex">
+		<a href="{:U('Article/lists?category=49')}" class="link" title="公司介绍">
+			<img src="__MONKEYSTYLE__images/shop_nav1.png" class="pic" alt="公司介绍">
+			<span class="tip">公司介绍</span>
+		</a>
+		<a href="{:U('Article/lists?category=45')}" class="link" title="产品展示">
+			<img src="__MONKEYSTYLE__images/shop_nav2.png" class="pic" alt="产品展示">
+			<span class="tip">产品展示</span>
+		</a>
+		<a href="{:U('Article/lists?category=44')}" class="link" title="新闻资讯">
+			<img src="__MONKEYSTYLE__images/shop_nav3.png" class="pic" alt="新闻资讯">
+			<span class="tip">新闻资讯</span>
+		</a>
+	</div>
+	<div class="display_flex">
+		<a href="{:U('Article/lists?category=47')}" class="link" title="企业相册">
+			<img src="__MONKEYSTYLE__images/shop_nav4.png" class="pic" alt="企业相册">
+			<span class="tip">企业相册</span>
+		</a>
+		<a href="javascript:void(0);" class="link" title="荣誉证书">
+			<img src="__MONKEYSTYLE__images/shop_nav5.png" class="pic" alt="荣誉证书">
+			<span class="tip">荣誉证书</span>
+		</a>
+		<a href="{:U('Article/lists?category=59')}" class="link" title="联系方式">
+			<img src="__MONKEYSTYLE__images/shop_nav6.png" class="pic" alt="联系方式">
+			<span class="tip">联系方式</span>
+		</a>
+	</div>
+</nav>
+
+<!-- 最新产品 -->
+<div class="tps_product">
+	<div class="tps_title clr">
+		<div class="name">最新产品</div>
+		<a href="javascript:void(0);" id="sortPopBtn" class="popbtn" title="分类">
+			<img src="__MONKEYSTYLE__images/shops_title_popbtn.png" class="sort_icon" />
+		</a>
+	</div>
+	<div class="main">
+		<ul>
+			<article:position name="vo" pos="4" pid="45">
+				<li class="display_flex">
+					<?php if(!empty($vo['cover_id'])){ ?>
+					<a href="{:U('Article/detail?id='.$vo['id'])}" title="" class="pic">
+						<img src="{$vo.cover_id|get_cover='url'}" alt="{$vo.title}" />
+					</a>
+					<div class="item">
+						<a href="{:U('Article/detail?id='.$vo['id'])}" title="" class="name">{$vo.title}</a>
+						<i class="border"></i>
+						<div class="city">地区：中国江西省景德镇市</div>
+						<div class="city"><span class="price">面议</span><span class="num">起批量：0套</span></div>
+					</div>
+					<?php } ?>
+				</li>
+			</article:position>
+			
+		</ul>
+	</div>
+</div>
+<!-- 产品分类 -->
+		
+<div class="tps_mask" id="tpsCatePop">
+	<div class="tps_sortpop">
+		<div class="title clr">
+			<a href="javascript:void(0);" class="icon" id="sortPopClose"></a>
+			<h3 class="h">分类</h3>
+		</div>
+		<div class="main">
+			<ul>
+				<li class="all"><a href="{:U('Article/lists?category=45')}">全部</a></li>
+				<think:cate pid="45">
+				<li><a href="{:U('Article/lists?category='.$cate['name'])}">{$cate.title}</a></li>
+				</think:cate>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- 公司简介 -->
+<div class="tps_introduce">
+	<div class="tps_title clr">
+		<div class="name">企业简介</div>
+		<a href="{:U('Article/lists?category=49')}" class="popbtn more" title="更多"></a>
+	</div>
+	<div class="main">
+		<think:article result="info" cate="49" limit="1">
+		<?php if(!empty($info['cover_id'])){ ?>
+		<a href="{:U('Article/lists?category=49')}" title="{:C('COMPANY_NAME')}" class="pic">
+			<img src="{$info.cover_id|get_cover='url'}" alt="{:C('COMPANY_NAME')}">
+		</a>
+		<?php } ?>
+		<div class="item">
+			<div class="content">{$info.description}</div>
+			<a href="{:U('Article/lists?category=49')}" title="更多" class="btn">MORE&nbsp;+</a>
+		</div>
+		</think:article>
+	</div>
+</div>
+
+<!-- 企业相册 -->
+<div class="tps_album">
+	<div class="tps_title clr">
+		<div class="name">企业相册</div>
+		<a href="{:U('Article/lists?category=47')}" class="popbtn more" title="更多"></a>
+	</div>
+	<div class="main">
+		<div class="swiper-container" id="shopsAlbum">
+			<ul class="swiper-wrapper">
+				<article:position name="vo" pos="4" cate="47">
+				<li class="swiper-slide">
+					<a href="{:U('Article/detail?id='.$vo['id'])}" title="" class="link">
+						<img src="{$vo.cover_id|get_cover='url'}" alt="{$vo.title}" class="pic" />
+						<span class="name">{$vo.title}</span>
+					</a>
+				</li>
+				</article:position>
+			</ul>
+			<div class="swiper-scrollbar album_scrollbar"></div>
+		</div>
+	</div>
+</div>
+
+<!-- 新闻资讯 -->
+<div class="tps_news">
+	<div class="tps_title clr">
+		<div class="name">新闻资讯</div>
+		<a href="{:U('Article/lists?category=44')}" class="popbtn more" title="更多"></a>
+	</div>
+	<div class="main">
+		<ul>
+			<article:position name="vo" pos="4" pid="44">
+				<li class="display_flex">
+					<?php if(!empty($vo['cover_id'])){ ?>
+					<a href="{:U('Article/detail?id='.$vo['id'])}" class="pic"><img src="{$vo.cover_id|get_cover='url'}" alt="{$vo.title}" /></a>
+					<?php } ?>
+					<div class="item">
+						<a href="{:U('Article/detail?id='.$vo['id'])}" class="name">{$vo.title}</a>
+						<?php if(!empty($vo['description'])){ ?>
+						<p class="tips">{$vo.description|msubstr=0,26}</p>
+						<span title="time" class="time">{$vo.create_time|date='Y-m-d',###}</span>
+						<?php } ?>
+					</div>
+				</li>
+			</article:position>
+		</ul>
+	</div>
+</div>
+
+
+<div class="tps_position clr" id="pageId" data-id="0">
+	<img src="__MONKEYSTYLE__images/bread_nav_ico.png">
+	<a href="{:U('index/index')}">首页</a>
+</div>
+
+<include file="Public/footer"/>

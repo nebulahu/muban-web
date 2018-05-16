@@ -1,0 +1,69 @@
+
+<!--      
+@name: 分页
+@description: 整站 -分页
+@author: hkh
+-->
+<!-- 分页 -->
+
+<!--      
+@name: 分页
+@description: 整站 -分页
+@author: hkh
+-->
+<!-- 分页 -->
+<if condition="$page['totalCount'] gt $page['pagesize']">
+<div class="tps-pages">
+	
+    <if condition="$page['nowpage'] eq 1">
+    <!-- 第一页 -->
+    <a href="{:$page['nextPage']}" class="next-only is_flexbox btn-orange">下一页</a>
+    
+    <elseif condition="$page['nowpage'] eq 2" />
+    <!--  -->
+    <div class="many display_flex btn-orange">
+        <div class="many-left display_flex">
+            <a href="{:$page['prePage']}" class="link is_flexbox"><img src="__WEBSITETLP__{$_temp_config.html_dir}/public/images/icon-left.png" class="pic" /></a>
+        </div>
+        <div class="many-center"><span class="nowpage is_flexbox">第&nbsp;{$page['nowpage']}&nbsp;页</span></div>
+        <?php if(!empty($page['nextPage'])){
+        ?>
+        <div class="many-right">
+            <a href="{:$page['nextPage']}" class="link is_flexbox"><img src="__WEBSITETLP__{$_temp_config.html_dir}/public/images/icon-right.png" class="pic" /></a>
+        </div>
+        <?php
+        	}else{
+        ?>
+        <div class="many-right"></div>
+        <?php
+        	}
+        ?>
+    </div>
+    <else />
+    <!--  -->
+    <div class="many display_flex btn-orange">
+        <div class="many-left display_flex">
+        <a href="{:$page['firstPage']}" class="link is_flexbox"><img src="__WEBSITETLP__{$_temp_config.html_dir}/public/images/icon-lefted.png" class="pic" /></a>
+        <a href="{:$page['prePage']}" class="link is_flexbox"><img src="__WEBSITETLP__{$_temp_config.html_dir}/public/images/icon-left.png" class="pic" /></a>
+        </div>
+        <div class="many-center"><span class="nowpage is_flexbox">第&nbsp;{$page['nowpage']}&nbsp;页</span></div>
+        <?php if(!empty($page['nextPage'])){
+        ?>
+        <div class="many-right">
+            <a href="{:$page['nextPage']}" class="link is_flexbox"><img src="__WEBSITETLP__{$_temp_config.html_dir}/public/images/icon-right.png" class="pic" /></a>
+        </div>
+         <?php
+        	}else{
+        ?>
+        <div class="many-right"></div>
+        <?php
+        	}
+        ?>
+    </div>
+    </if>
+</div>
+<else />
+</if>
+
+
+

@@ -1,0 +1,55 @@
+<include file="Public/header"/>
+<!-- 公司简介 -->
+<div class="tps_introduce">
+	<div class="tps_title clr">
+		<div class="name">公司简介</div>
+	</div>
+	<div class="pagein_introduce">
+		<h3 class="h">公司档案</h3>
+		<div class="info">
+			<ul>
+				<li>
+					<span class="tip">公司名称</span>
+					<span class="item">景德镇市金冠陶瓷有限公司</span>
+				</li>
+				<li>
+					<span class="tip">公司类型</span>
+					<span class="item">私营合伙</span>
+				</li>
+				<li>
+					<span class="tip">所在地</span>
+					<span class="item">私营合伙</span>
+				</li>
+				<li>
+					<span class="tip">公司规模</span>
+					<span class="item">私营合伙</span>
+				</li>
+				<li>
+					<span class="tip">注册资本</span>
+					<span class="item">私营合伙</span>
+				</li>
+				<li>
+					<span class="tip">注册年份</span>
+					<span class="item">私营合伙</span>
+				</li>
+				<li>
+					<span class="tip">所属行业</span>
+					<span class="item">私营合伙</span>
+				</li>			
+			</ul>
+		</div>
+		<h3 class="h">公司介绍</h3>
+		<div class="content">
+			<think:article id="8">
+				{$article['content']}
+			</think:article>
+		</div>
+	</div>
+</div>
+<div class="tps_position clr" id="pageId" data-id="1">
+	<img src="__MONKEYSTYLE__images/bread_nav_ico.png">
+	<a href="{:U('index/index')}">首页</a>
+	<i class="iconright"></i>
+	<span>公司简介</span>
+</div>
+<include file="Public/footer"/>

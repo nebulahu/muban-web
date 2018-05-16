@@ -1,0 +1,152 @@
+<extend name="Public/base" />
+
+<!-- 子导航 -->
+
+<block name="body">
+<script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+	<div class="main-title">
+		<h2>手机站设置</h2>
+	</div>
+	<div class="tab-wrap">
+	   <div class="tab-content">
+           <form action="{:U('save')}" method="post" class="form-horizontal">
+
+            		<div class="form-item">
+            			<div class="controls">
+
+            			<label class="item-label">公司介绍分类ID:</label>
+                        	
+                        	<select name="company_cid">
+	                            <option value="0" <if condition="$vo['id'] eq $config['company_cid']">selected="selected"</if>>--请选择--</option>
+                            	<volist name="tree" id="vo">
+                            	<option value="{$vo.id}" <if condition="$vo['id'] eq $config['company_cid']">selected="selected"</if>>{$vo.title}</option>
+                                	<if condition="$vo['_'] neq ''">
+                                		<volist name="vo._" id="v">
+                                        <option value="{$v.id}"  <if condition="$v['id'] eq $config['company_cid']">selected="selected"</if>>--{$v.title}</option>
+                                            <if condition="$v['_'] neq ''">
+                                            	<volist name="v._" id="vv">
+                                                <option value="{$vv.id}"  <if condition="$vv['id'] eq $config['company_cid']">selected="selected"</if>>----{$vv.title}</option>
+                                                </volist>
+                                            </if>
+                                        </volist>
+                                    </if>
+                                </volist>
+                            </select>
+            			<label class="item-label">产品分类ID:</label>
+                        	<select name="product_cid">
+	                            <option value="0" <if condition="$vo['id'] eq $config['product_cid']">selected="selected"</if>>--请选择--</option>
+                            	<volist name="tree" id="vo">
+                            	<option value="{$vo.id}" <if condition="$vo['id'] eq $config['product_cid']">selected="selected"</if>>{$vo.title}</option>
+                                	<if condition="$vo['_'] neq ''">
+                                		<volist name="vo._" id="v">
+                                        <option value="{$v.id}"  <if condition="$v['id'] eq $config['product_cid']">selected="selected"</if>>--{$v.title}</option>
+                                            <if condition="$v['_'] neq ''">
+                                            	<volist name="v._" id="vv">
+                                                <option value="{$vv.id}"  <if condition="$vv['id'] eq $config['product_cid']">selected="selected"</if>>----{$vv.title}</option>
+                                                </volist>
+                                            </if>
+                                        </volist>
+                                    </if>
+                                </volist>
+                            </select>
+            			<label class="item-label">新闻分类ID:</label>
+                            <select name="news_cid">
+                            	<option value="0" <if condition="$vo['id'] eq $config['news_cid']">selected="selected"</if>>--请选择--</option>
+                            	<volist name="tree" id="vo">
+                            	<option value="{$vo.id}" <if condition="$vo['id'] eq $config['news_cid']">selected="selected"</if>>{$vo.title}</option>
+                                	<if condition="$vo['_'] neq ''">
+                                		<volist name="vo._" id="v">
+                                        <option value="{$v.id}"  <if condition="$v['id'] eq $config['news_cid']">selected="selected"</if>>--{$v.title}</option>
+                                            <if condition="$v['_'] neq ''">
+                                            	<volist name="v._" id="vv">
+                                                <option value="{$vv.id}"  <if condition="$vv['id'] eq $config['news_cid']">selected="selected"</if>>----{$vv.title}</option>
+                                                </volist>
+                                            </if>
+                                        </volist>
+                                    </if>
+                                </volist>
+                            </select>
+            			<label class="item-label">相册分类ID:</label>
+                        	<select name="album_cid">
+                            	<option value="0" <if condition="$vo['id'] eq $config['album_cid']">selected="selected"</if>>--请选择--</option>
+                            	<volist name="tree" id="vo">
+                            	<option value="{$vo.id}" <if condition="$vo['id'] eq $config['album_cid']">selected="selected"</if>>{$vo.title}</option>
+                                	<if condition="$vo['_'] neq ''">
+                                		<volist name="vo._" id="v">
+                                        <option value="{$v.id}"  <if condition="$v['id'] eq $config['album_cid']">selected="selected"</if>>--{$v.title}</option>
+                                            <if condition="$v['_'] neq ''">
+                                            	<volist name="v._" id="vv">
+                                                <option value="{$vv.id}"  <if condition="$vv['id'] eq $config['album_cid']">selected="selected"</if>>----{$vv.title}</option>
+                                                </volist>
+                                            </if>
+                                        </volist>
+                                    </if>
+                                </volist>
+                            </select>
+            			<label class="item-label">联系我们分类ID:</label>
+                        	<select name="relation_cid">
+                            	<option value="0" <if condition="$vo['id'] eq $config['relation_cid']">selected="selected"</if>>--请选择--</option>
+                            	<volist name="tree" id="vo">
+                            	<option value="{$vo.id}" <if condition="$vo['id'] eq $config['relation_cid']">selected="selected"</if>>{$vo.title}</option>
+                                	<if condition="$vo['_'] neq ''">
+                                		<volist name="vo._" id="v">
+                                        <option value="{$v.id}"  <if condition="$v['id'] eq $config['relation_cid']">selected="selected"</if>>--{$v.title}</option>
+                                            <if condition="$v['_'] neq ''">
+                                            	<volist name="v._" id="vv">
+                                                <option value="{$vv.id}"  <if condition="$vv['id'] eq $config['relation_cid']">selected="selected"</if>>----{$vv.title}</option>
+                                                </volist>
+                                            </if>
+                                        </volist>
+                                    </if>
+                                </volist>
+                            </select>
+            			<!--<label class="item-label">荣誉资质ID:</label><input type="text" class="text input-small" name="relation_cid" value="{$config.company_cid}"/>-->
+
+                        </div>
+                        <div class="controls">
+                        <label class="item-label">模版列表:</label>
+        				<volist name="MOBILE_TEMP" id="vo">
+        				    <label class="radio" style="height:80px;">
+								<img src="{$vo.style_img}" style="width:50px;height:50px;display:block;border-radius: 5px;box-shadow: 0 0 2px 1px rgba(0,0,0,0.4);">
+    				            <input type="radio" value="{$vo.temp_id}" style="margin-right: 0;" <eq name="config.temp_id" value="$vo['temp_id']">checked</eq> name="temp_id" />
+								<span>{$vo.name}</span>
+								
+    				        </label>
+							
+        				</volist>
+                        
+            				
+            			</div>
+                        <div class="controls">
+                        <label class="item-label">微名片列表:</label>
+        				<volist name="MOBILE_WMP" id="vo">
+        				    <label class="radio" style="height:190px;">
+								<img src="{$vo.wmp_style_img}" style="width:100px;height:150px;display:block;">
+    				            <input type="radio" value="{$vo.wmp_id}" <eq name="config.wmp_id" value="$vo['wmp_id']">checked</eq> name="wmp_id" />
+								<span>{$vo.name}</span>
+								
+    				        </label>
+							
+        				</volist>
+                        
+            				
+            			</div>
+            		</div>
+
+            		<div class="form-item">
+            			<label class="item-label"></label>
+            			<div class="controls">
+            				<button type="submit" class="btn submit-btn ajax-post" target-form="form-horizontal">确 定</button>
+            				
+            				<button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+            			</div>
+            		</div>
+        	</form>
+		</div>
+	</div>
+</block>
+
+<block name="script">
+
+</block>
+

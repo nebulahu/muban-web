@@ -1,0 +1,125 @@
+
+<include file="Public/header"/>
+{:hook('DisplayFocus', array('group' => 'mobile','type' => '3','classname' => 'tps-banner','styleid' => 'picFocus'))}
+
+<!-- 最新产品 -->
+<if condition="$_temp_config['product_cid'] neq 0">
+<div class="tps-product">
+	<div class="tps-title">
+		<div class="name">{$_temp_config['product_cid']|get_category=###,title}</div>
+	</div>
+	<div class="tps-product-main">
+		<ul class="clr">
+			<article:position name="vo" pos="4" pid="$_temp_config['product_cid']">
+				<li>
+					<?php if(!empty($vo['cover_id'])){ ?>
+					<a href="{:U('Article/detail?id='.$vo['id'])}" title="" class="linkimg">
+						<img src="{$vo.cover_id|get_cover='url'}" class="pic" alt="{$vo.title}" />
+					</a>
+
+					<div class="item">
+						<a href="{:U('Article/detail?id='.$vo['id'])}" title="{$vo.title}" class="name a_hidden">{$vo.title}</a>
+						<?php $price = '';$price = getFieldByAid($vo['id'],$vo['model_id'],"price");?>
+                        <if condition="$price neq ''">
+                        <a class="info clr"><span class="price">¥{$price}</span><span class="btn">详情</span></a>
+                        </if>
+					</div>
+					<?php } ?>
+				</li>
+			</article:position>
+			
+		</ul>
+	</div>
+</div>
+</if>
+<!-- 公司简介 -->
+<if condition="$_temp_config['company_cid'] neq 0">
+<div class="tps-introduce">
+	<div class="tps-title">
+		<div class="name">{$_temp_config['company_cid']|get_category=###,title}</div>
+	</div>
+	<div class="tps-introduce-main">
+        <article:list name="info" category="$_temp_config['company_cid']" row="1">
+		<?php if(!empty($info['cover_id'])){ ?>
+		<a href="{:U('Article/lists?category='.$_temp_config['company_cid'])}" title="{:C('COMPANY_NAME')}" class="linkimg">
+			<img src="{$info.cover_id|get_cover='url'}" class="pic" alt="{:C('COMPANY_NAME')}">
+		</a>
+		<?php } ?>
+		<div class="info">{$info.description}</div>
+		<a href="{:U('Article/lists?category='.$_temp_config['company_cid'])}" title="更多" class="btn">MORE&nbsp;+</a>
+		<div class="item">
+			
+		</div>
+		</article:list>
+	</div>
+</div>
+</if>
+<!-- 新闻资讯 -->
+<if condition="$_temp_config['news_cid'] neq 0">
+<div class="tps-news">
+	<div class="tps-title">
+		<div class="name">{$_temp_config['news_cid']|get_category=###,title}</div>
+	</div>
+	<div class="tps-news-main">
+		<ul>
+			<article:position name="vo" pos="4" pid="$_temp_config['news_cid']">
+				<li class="display_flex">
+					<?php if(!empty($vo['cover_id'])){ ?>
+					<a href="{:U('Article/detail?id='.$vo['id'])}" class="linkimg"><img src="{$vo.cover_id|get_cover='url'}" class="pic" alt="{$vo.title}" /></a>
+					<?php } ?>
+					<div class="item">
+						<a href="{:U('Article/detail?id='.$vo['id'])}" class="name a_hidden">{$vo.title}</a>
+						<?php if(!empty($vo['description'])){ ?>
+						<p class="tips">{$vo.description|msubstr=0,26}</p>
+						<span title="time" class="time">{$vo.create_time|date='Y-m-d',###}</span>
+						<?php } ?>
+					</div>
+				</li>
+			</article:position>
+		</ul>
+	</div>
+</div>
+</if>
+<!-- 企业相册 -->
+<if condition="$_temp_config['album_cid'] neq 0">
+<div class="tps-album">
+	<div class="tps-title">
+		<div class="name">{$_temp_config['album_cid']|get_category=###,title}</div>
+	</div>
+	<div class="tps-album-main">
+		<ul class="clr">
+			<article:position name="vo" pos="4" cate="$_temp_config['album_cid']">
+			<li>
+				<a href="{:U('Article/detail?id='.$vo['id'])}" title="{$vo.title}" class="link">
+					<img src="{$vo.cover_id|get_cover='url'}" alt="{$vo.title}" class="pic" />
+				</a>
+				<div class="info clr">
+					<span class="name">{$vo.title}</span>
+					<span class="num">{$vo.update_time|date='Y-m-d',###}</span>
+				</div>
+			</li>
+			
+			</article:position>
+		</ul>
+	</div>
+</div>
+</if>
+
+
+
+<div class="tps-position clr">
+	<a href="{:U('index/index')}" class="link">首页</a>
+	<i class="iconright">&nbsp;&raquo;&nbsp;</i>
+	<span class="last a_hidden">首页</span>
+</div>
+
+<include file="Public/footer"/>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	pageinit.homepage();
+});
+	
+</script>
+
+</body>
+</html>

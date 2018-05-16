@@ -1,0 +1,32 @@
+<include file="Public/header"/>
+	<div class="pagein-newslist">
+		<ul>
+			<!-- article:list列表循环标签，$cid为类目的id，$category['list_row']为显示条数（后台设置）。 -->
+			<article:list name="vo" category="$pid" row="$category['list_row']">
+				<li>
+					<a href="{:U('Article/detail','id='.$vo['id'])}" class="tr clr" target="_blank" title="{$vo.title}">
+						<div class="tr-img">
+							<img src="{$vo.cover_id|get_cover='path'}" class="pic" alt="{$vo.title}" />
+						</div>
+						<div class="tr-item">
+							<div class="name a_hidden">{$vo.title}</div>			<!-- {$vo.title}为标题 -->
+							<p class="txt">{$vo.description|msubstr=0,80}</p>
+							<!-- {$vo.description}为描述，msubstr为字符串截取函数，0,80代表截取80个汉字。 -->
+							<span class="time">发布时间：{$vo['create_time']|date='Y-m-d',###}</span>
+							<!-- $vo.create_time}为时间其中date是转换时间的函数，’Y-m-d’代表着’年-月-日’ -->
+							<span class="more">更多</span>
+						</div>
+					</a>
+				</li>
+			</article:list>
+		</ul>
+		<article:page cate="$cid" listrow="$category['list_row']"/>
+        </article:page>
+	</div>
+	
+<include file="Public/footer"/>
+<script>
+	deqier.modulePage(4);
+</script>
+</body>
+</html>
